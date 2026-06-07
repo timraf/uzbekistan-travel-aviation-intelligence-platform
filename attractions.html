@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Attractions & Monuments of Uzbekistan — Directory</title>
+<meta name="description" content="The greatest monuments of Uzbekistan: Registan, Itchan Kala, Shah-i-Zinda, Po-i-Kalyan and more. Photos, history, opening hours and how to visit."/>
+<link rel="stylesheet" href="assets/site.css"/>
+</head>
+<body>
+<div id="site-header"></div>
+
+<header class="page-hero">
+  <div class="wrap">
+    <nav class="crumb"><a href="index.html">Home</a> <span id="c1"></span> <span>Attractions</span></nav>
+    <p class="eyebrow">Monuments &amp; sights</p>
+    <h1>Attractions of Uzbekistan</h1>
+    <p class="lede">Madrasahs, minarets, mausoleums and bazaars — the masterpieces of Silk Road architecture, documented and ready to explore.</p>
+  </div>
+</header>
+
+<nav class="subnav"><div class="wrap subnav-inner">
+  <a href="attractions.html" class="active">All attractions</a>
+  <a href="attraction-registan.html">Registan</a>
+  <a href="attraction-itchan-kala.html">Itchan Kala</a>
+  <a href="unesco.html">UNESCO heritage</a>
+  <a href="cities.html">By city</a>
+</div></nav>
+
+<section class="section-sm">
+  <div class="wrap">
+    <div class="filterbar reveal">
+      <div class="filter-search"><span id="fs"></span><input placeholder="Search a monument or site…"/></div>
+      <button class="chip on">All</button>
+      <button class="chip">Samarkand</button>
+      <button class="chip">Bukhara</button>
+      <button class="chip">Khiva</button>
+      <button class="chip">UNESCO</button>
+    </div>
+
+    <div class="dir-grid">
+      <a href="attraction-registan.html" class="dcard reveal">
+        <div class="dcard-media"><img src="assets/img/u7.jpg" alt="Registan"/><span class="badge badge-gold tag">★ Iconic</span></div>
+        <div class="dcard-body"><h3>Registan Square</h3><p class="muted" style="font-size:.9rem">Three madrasahs around the Islamic world's grandest public square.</p><div class="dcard-meta"><span id="p1"></span><span>Samarkand</span><span class="dot"></span><span>UNESCO</span></div></div>
+      </a>
+      <a href="attraction-itchan-kala.html" class="dcard reveal">
+        <div class="dcard-media"><img src="assets/img/u5.jpg" alt="Itchan Kala"/><span class="badge badge-gold tag">★ Iconic</span></div>
+        <div class="dcard-body"><h3>Itchan Kala</h3><p class="muted" style="font-size:.9rem">Khiva's walled inner city — a complete medieval town preserved intact.</p><div class="dcard-meta"><span>Khiva</span><span class="dot"></span><span>UNESCO</span></div></div>
+      </a>
+      <a href="attraction-registan.html" class="dcard reveal">
+        <div class="dcard-media"><img src="assets/img/u4.jpg" alt="Shah-i-Zinda"/></div>
+        <div class="dcard-body"><h3>Shah-i-Zinda</h3><p class="muted" style="font-size:.9rem">A glittering avenue of tiled mausoleums climbing a hillside.</p><div class="dcard-meta"><span>Samarkand</span></div></div>
+      </a>
+      <a href="attraction-registan.html" class="dcard reveal">
+        <div class="dcard-media"><img src="assets/img/u1.jpg" alt="Po-i-Kalyan"/></div>
+        <div class="dcard-body"><h3>Po-i-Kalyan</h3><p class="muted" style="font-size:.9rem">Bukhara's great mosque, madrasah and 47-metre minaret ensemble.</p><div class="dcard-meta"><span>Bukhara</span></div></div>
+      </a>
+      <a href="attraction-registan.html" class="dcard reveal">
+        <div class="dcard-media"><img src="assets/img/u8.jpg" alt="Gur-e-Amir"/></div>
+        <div class="dcard-body"><h3>Gur-e-Amir</h3><p class="muted" style="font-size:.9rem">The fluted azure dome over the tomb of Amir Timur.</p><div class="dcard-meta"><span>Samarkand</span></div></div>
+      </a>
+      <a href="attraction-registan.html" class="dcard reveal">
+        <div class="dcard-media"><img src="assets/img/u1.jpg" alt="Bibi-Khanym"/></div>
+        <div class="dcard-body"><h3>Bibi-Khanym Mosque</h3><p class="muted" style="font-size:.9rem">A monumental mosque beside the bustling Siab Bazaar.</p><div class="dcard-meta"><span>Samarkand</span></div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="assets/site.js"></script>
+<script>
+UZ.mount('destinations');
+const I=UZ.I,set=(id,s)=>{const e=document.getElementById(id);if(e)e.innerHTML=s;};
+set('c1',I.chevron);set('fs',I.search);set('p1',I.pin);
+</script>
+</body>
+</html>

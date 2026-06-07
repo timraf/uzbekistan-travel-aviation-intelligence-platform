@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Samarkand International Airport (SKD) — Live Flights, Terminal & Transfers</title>
+<meta name="description" content="Samarkand International Airport (SKD): live departures and arrivals, the striking 2022 terminal, transfers, services and guides to the Silk Road's crown jewel."/>
+<link rel="stylesheet" href="assets/site.css"/>
+<style>
+.board2{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden}
+.board2-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem 1.2rem;background:var(--primary-ink);color:#fff;flex-wrap:wrap}
+:root[data-theme="dark"] .board2-head{background:oklch(0.28 0.04 220)}
+.tabs{display:flex;gap:.3rem;background:rgba(255,255,255,.14);padding:3px;border-radius:999px}
+.tabs button{font-size:.82rem;font-weight:600;color:rgba(255,255,255,.78);padding:.35rem .9rem;border-radius:999px}
+.tabs button.on{background:#fff;color:var(--primary-strong)}
+.frow{display:grid;grid-template-columns:80px 1fr 96px 64px 120px;gap:1rem;align-items:center;padding:.8rem 1.2rem;border-bottom:1px solid var(--border);font-size:.9rem}
+.frow:last-child{border-bottom:none}
+.frow:hover{background:var(--surface-2)}
+.frow .fl{font-family:var(--font-mono);font-weight:700;font-size:.85rem}
+.frow .tm{font-family:var(--font-mono);font-weight:700}
+.frow .gt{font-family:var(--font-mono);color:var(--text-muted);text-align:center}
+.svc-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.svc-mini{display:flex;gap:.7rem;align-items:center;padding:.9rem 1rem;border:1px solid var(--border);border-radius:var(--r);background:var(--surface)}
+.svc-mini .i{width:38px;height:38px;border-radius:var(--r-sm);display:grid;place-items:center;background:var(--primary-soft);color:var(--primary-strong);flex:none}
+.svc-mini .i svg{width:19px;height:19px}
+@media (max-width:600px){.frow{grid-template-columns:70px 1fr 92px}.frow .gt,.frow .tm{display:none}.svc-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body data-hero="1">
+<div id="site-header"></div>
+
+<header class="page-hero-img" data-screen-label="Airport detail — Samarkand">
+  <img src="assets/img/u8.jpg" alt="Samarkand International Airport region"/>
+  <div class="wrap">
+    <nav class="crumb"><a href="index.html">Home</a> <span id="c1"></span> <a href="airports.html">Airports</a> <span id="c2"></span> <span>Samarkand · SKD</span></nav>
+    <div class="row gap-s" style="margin-top:1rem"><span class="badge badge-teal" style="background:rgba(255,255,255,.16);color:#fff">IATA · SKD</span><span class="badge badge-gold" style="background:rgba(255,255,255,.16);color:#fff">ICAO · UTSS</span><span class="badge badge-live" style="background:rgba(255,255,255,.16);color:#fff">Live data</span></div>
+    <h1 style="margin-top:.9rem">Samarkand International Airport</h1>
+    <p class="lede">A landmark new terminal — opened 2022 — welcoming the world to the Silk Road's crown jewel.</p>
+  </div>
+</header>
+
+<nav class="subnav"><div class="wrap subnav-inner">
+  <a href="#flights" class="active">Live flights</a>
+  <a href="#terminals">Terminals</a>
+  <a href="#transfer">Getting there</a>
+  <a href="#services">Services</a>
+  <a href="#faq">FAQ</a>
+</div></nav>
+
+<section class="section-sm">
+  <div class="wrap">
+    <div class="detail-grid">
+      <div>
+        <!-- live board -->
+        <div id="flights" class="board2 reveal">
+          <div class="board2-head">
+            <div class="row gap-s"><span class="badge badge-live" style="background:rgba(255,255,255,.16);color:#fff">LIVE 14:32</span><b>Samarkand flight board</b></div>
+            <div class="tabs"><button class="on" data-tab="dep">Departures</button><button data-tab="arr">Arrivals</button></div>
+          </div>
+          <div class="frow" style="background:var(--surface-2);font-family:var(--font-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-faint)"><span>Flight</span><span>Destination</span><span>Time</span><span>Gate</span><span>Status</span></div>
+          <div id="frows"></div>
+          <div class="tc" style="padding:.7rem"><span class="muted" style="font-size:.82rem">Showing 8 of 142 flights today</span></div>
+        </div>
+
+        <!-- terminals -->
+        <h2 id="terminals" class="h3" style="margin:2.4rem 0 1rem">Terminals &amp; layout</h2>
+        <div class="grid g2 reveal" style="gap:14px">
+          <div class="panel panel-pad"><div class="row between"><b>Main terminal · 2022</b><span class="badge badge-teal">Award-winning</span></div><p class="muted" style="font-size:.9rem;margin-top:.5rem">A single elegant terminal inspired by an open book, with unified international and domestic flows.</p></div>
+          <div class="panel panel-pad"><div class="row between"><b>Silk Road Samarkand</b><span class="badge badge-cobalt">Tourism complex</span></div><p class="muted" style="font-size:.9rem;margin-top:.5rem">Adjacent congress, hotel and cultural complex serving conferences and visitors.</p></div>
+        </div>
+        <div class="ph ar-16-9 reveal" style="margin-top:14px;border-radius:var(--r-lg)">interactive terminal map · drop floor-plan SVG here</div>
+
+        <!-- getting there -->
+        <h2 id="transfer" class="h3" style="margin:2.4rem 0 1rem">Getting to the city</h2>
+        <div class="svc-row reveal">
+          <div class="svc-mini"><span class="i" id="t1"></span><div><b style="font-size:.92rem">Airport taxi</b><div class="muted" style="font-size:.82rem">~20 min · from $4</div></div></div>
+          <div class="svc-mini"><span class="i" id="t2"></span><div><b style="font-size:.92rem">Metro + bus</b><div class="muted" style="font-size:.82rem">~35 min · from $0.20</div></div></div>
+          <div class="svc-mini"><span class="i" id="t3"></span><div><b style="font-size:.92rem">Private transfer</b><div class="muted" style="font-size:.82rem">Door to door · pre-book</div></div></div>
+        </div>
+
+        <!-- services -->
+        <h2 id="services" class="h3" style="margin:2.4rem 0 1rem">Passenger services</h2>
+        <div class="svc-row reveal">
+          <div class="svc-mini"><span class="i" id="s1"></span><div><b style="font-size:.92rem">Lounges</b><div class="muted" style="font-size:.82rem">3 lounges · pay-per-use</div></div></div>
+          <div class="svc-mini"><span class="i" id="s2"></span><div><b style="font-size:.92rem">Free Wi-Fi</b><div class="muted" style="font-size:.82rem">Airport-wide</div></div></div>
+          <div class="svc-mini"><span class="i" id="s3"></span><div><b style="font-size:.92rem">Parking</b><div class="muted" style="font-size:.82rem">Short &amp; long stay</div></div></div>
+          <div class="svc-mini"><span class="i" id="s4"></span><div><b style="font-size:.92rem">Currency &amp; ATM</b><div class="muted" style="font-size:.82rem">24/7 exchange</div></div></div>
+          <div class="svc-mini"><span class="i" id="s5"></span><div><b style="font-size:.92rem">eSIM &amp; SIM</b><div class="muted" style="font-size:.82rem">On arrival</div></div></div>
+          <div class="svc-mini"><span class="i" id="s6"></span><div><b style="font-size:.92rem">Assistance</b><div class="muted" style="font-size:.82rem">Reduced mobility</div></div></div>
+        </div>
+
+        <!-- FAQ -->
+        <h2 id="faq" class="h3" style="margin:2.4rem 0 1rem">Frequently asked</h2>
+        <div class="reveal">
+          <details class="faq-item" open><summary class="faq-q">How early should I arrive for an international flight?<span class="pl">+</span></summary><div class="faq-a">Arrive at least 3 hours before departure for international flights and 2 hours for domestic, to allow for check-in and security.</div></details>
+          <details class="faq-item"><summary class="faq-q">Is there a left-luggage service?</summary><div class="faq-a">Yes, baggage storage is available in the arrivals hall of Terminal 2, charged per item per day.</div></details>
+        </div>
+      </div>
+
+      <!-- aside -->
+      <aside class="aside">
+        <div class="kpanel reveal">
+          <h4 style="margin-bottom:.8rem">At a glance</h4>
+          <div class="spec"><span class="sk">IATA / ICAO</span><span class="sv mono">SKD / UTSS</span></div>
+          <div class="spec"><span class="sk">City</span><span class="sv">Samarkand</span></div>
+          <div class="spec"><span class="sk">Distance to centre</span><span class="sv">9 km</span></div>
+          <div class="spec"><span class="sk">Terminal opened</span><span class="sv">2022</span></div>
+          <div class="spec"><span class="sk">Time zone</span><span class="sv">UTC+5</span></div>
+          <div class="spec"><span class="sk">Runway</span><span class="sv">3,100 m</span></div>
+        </div>
+        <div class="aside-offer reveal">
+          <span class="badge badge-spon">Partner offer</span>
+          <h4 style="margin:.7rem 0 .3rem">Private airport transfer</h4>
+          <p class="muted" style="font-size:.88rem">Meet &amp; greet, fixed price, English-speaking driver.</p>
+          <div class="between" style="margin-top:.9rem"><span class="price">$18</span><a href="offers.html" class="btn btn-gold btn-sm">Book transfer</a></div>
+        </div>
+        <div class="aside-offer reveal" style="background:linear-gradient(160deg,var(--primary-soft),var(--surface))">
+          <span class="badge badge-spon">Sponsored</span>
+          <h4 style="margin:.7rem 0 .3rem">Airport lounge access</h4>
+          <p class="muted" style="font-size:.88rem">Business lounge with food, Wi-Fi and showers.</p>
+          <div class="between" style="margin-top:.9rem"><span class="price txt-primary">$29</span><a href="offers.html" class="btn btn-primary btn-sm">Reserve</a></div>
+        </div>
+        <div class="panel panel-pad reveal">
+          <h4 style="margin-bottom:.7rem">Nearby</h4>
+          <a href="city-samarkand.html" class="rel-card"><img src="assets/img/u7.jpg" alt="Samarkand"/><div><b>Samarkand city guide</b><small>UNESCO · 9 km</small></div></a>
+          <a href="attraction-registan.html" class="rel-card"><img src="assets/img/u7.jpg" alt="Registan"/><div><b>Registan Square</b><small>Must-see · 15 min</small></div></a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="assets/site.js"></script>
+<script>
+UZ.mount('airports');
+const I=UZ.I,set=(id,s)=>{const e=document.getElementById(id);if(e)e.innerHTML=s;};
+set('c1',I.chevron);set('c2',I.chevron);
+set('t1',I.car);set('t2',I.train);set('t3',I.plane);
+set('s1',I.star);set('s2',I.wifi);set('s3',I.car);set('s4',I.info);set('s5',I.wifi);set('s6',I.shield);
+
+const dep=[
+  ['HY 632','Tashkent TAS','11:30','A2','boarding','Boarding'],
+  ['TK 372','Istanbul IST','15:45','A1','ontime','On time'],
+  ['FZ 1730','Dubai DXB','16:20','A3','ontime','On time'],
+  ['HY 634','Tashkent TAS','18:10','A2','ontime','On time'],
+  ['SU 1845','Moscow SVO','19:05','B1','delayed','Delayed 20m'],
+  ['HY 56','Dubai DXB','20:15','A4','ontime','On time'],
+  ['J2 778','Almaty ALA','13:40','B2','ontime','On time'],
+  ['HY 638','Tashkent TAS','08:25','A2','departed','Departed']
+];
+const arr=[
+  ['HY 631','Tashkent TAS','11:05','—','ontime','Landed'],
+  ['FZ 1729','Dubai DXB','13:20','—','ontime','On time'],
+  ['TK 371','Istanbul IST','14:50','—','ontime','On time'],
+  ['HY 633','Tashkent TAS','17:15','—','ontime','On time'],
+  ['SU 1844','Moscow SVO','18:30','—','delayed','Delayed 20m'],
+  ['HY 637','Tashkent TAS','07:40','—','ontime','Landed'],
+  ['FZ 1731','Dubai DXB','21:10','—','ontime','On time'],
+  ['J2 777','Almaty ALA','12:55','—','ontime','On time']
+];
+function render(rows){document.getElementById('frows').innerHTML=rows.map(f=>`<div class="frow"><span class="fl">${f[0]}</span><span>${f[1]}</span><span class="tm">${f[2]}</span><span class="gt">${f[3]}</span><span class="st ${f[4]}">${f[5]}</span></div>`).join('');}
+render(dep);
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('on'));b.classList.add('on');render(b.dataset.tab==='dep'?dep:arr);});
+</script>
+</body>
+</html>

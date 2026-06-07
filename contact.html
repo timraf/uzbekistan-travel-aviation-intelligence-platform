@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact & Information — Uzbekistan Gateway</title>
+<meta name="description" content="Get in touch with the Uzbekistan national travel gateway: traveller help, partnership enquiries, press and media, and useful official information."/>
+<link rel="stylesheet" href="assets/site.css"/>
+<style>
+.contact-card{display:flex;gap:1rem;align-items:flex-start;padding:1.3rem;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);transition:.18s}
+.contact-card:hover{border-color:var(--primary);box-shadow:var(--shadow-sm)}
+.contact-card .ci{width:44px;height:44px;border-radius:var(--r-sm);display:grid;place-items:center;background:var(--primary-soft);color:var(--primary-strong);flex:none}
+.contact-card .ci svg{width:22px;height:22px}
+</style>
+</head>
+<body>
+<div id="site-header" data-solid="1"></div>
+
+<header class="page-hero">
+  <div class="wrap">
+    <nav class="crumb"><a href="index.html">Home</a> <span id="c1"></span> <span>Contact</span></nav>
+    <p class="eyebrow">Contact &amp; information</p>
+    <h1>We're here to help</h1>
+    <p class="lede">Questions about travel, partnerships or press? Reach the right team below — we reply in English, Uzbek and Russian.</p>
+  </div>
+</header>
+
+<section class="section-sm">
+  <div class="wrap">
+    <div class="grid g3 reveal" style="margin-top:1.4rem">
+      <div class="contact-card"><span class="ci" id="i1"></span><div><b>Traveller help</b><p class="muted" style="font-size:.88rem;margin:.3rem 0">Trip planning, visas and practical questions.</p><a class="txt-primary" style="font-weight:600;font-size:.9rem" href="contact.html">help@uzbekistan.gateway</a></div></div>
+      <div class="contact-card"><span class="ci" id="i2"></span><div><b>Partnerships</b><p class="muted" style="font-size:.88rem;margin:.3rem 0">List flights, hotels, tours and services.</p><a class="txt-primary" style="font-weight:600;font-size:.9rem" href="admin/partners.html">partners@uzbekistan.gateway</a></div></div>
+      <div class="contact-card"><span class="ci" id="i3"></span><div><b>Press &amp; media</b><p class="muted" style="font-size:.88rem;margin:.3rem 0">Interviews, assets and newsroom enquiries.</p><a class="txt-primary" style="font-weight:600;font-size:.9rem" href="news.html">press@uzbekistan.gateway</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:clamp(20px,3vw,40px)">
+  <div class="wrap">
+    <div class="detail-grid">
+      <div class="panel panel-pad reveal">
+        <h2 class="h3" style="margin-bottom:1.2rem">Send us a message</h2>
+        <div class="grid g2" style="gap:1rem">
+          <div class="field"><label class="label">Full name</label><input class="input" placeholder="Your name"/></div>
+          <div class="field"><label class="label">Email</label><input class="input" placeholder="you@email.com"/></div>
+          <div class="field"><label class="label">Topic</label><select class="select"><option>Traveller help</option><option>Partnership</option><option>Press &amp; media</option><option>Feedback</option></select></div>
+          <div class="field"><label class="label">Language</label><select class="select"><option>English</option><option>Uzbek</option><option>Russian</option></select></div>
+        </div>
+        <div class="field" style="margin-top:1rem"><label class="label">Message</label><textarea class="textarea" rows="5" placeholder="How can we help?"></textarea></div>
+        <button class="btn btn-primary btn-lg" style="margin-top:1.2rem">Send message</button>
+      </div>
+      <aside class="aside">
+        <div class="kpanel reveal">
+          <h4 style="margin-bottom:.8rem">Information desk</h4>
+          <div class="krow"><span id="k1"></span><div><b>Tashkent</b><div class="muted" style="font-size:.86rem">National Tourism Office, Tashkent</div></div></div>
+          <div class="krow"><span id="k2"></span><div><b>Hours</b><div class="muted" style="font-size:.86rem">Mon–Sat · 09:00–18:00 (UTC+5)</div></div></div>
+          <div class="krow"><span id="k3"></span><div><b>Hotline</b><div class="muted" style="font-size:.86rem">+998 71 000 0000</div></div></div>
+        </div>
+        <div class="panel panel-pad reveal">
+          <h4 style="margin-bottom:.7rem">Before you write</h4>
+          <details class="faq-item" open style="border:none"><summary class="faq-q" style="padding:.6rem 0;font-size:.94rem">Do I need a visa?<span class="pl">+</span></summary><div class="faq-a" style="font-size:.9rem">Most nationalities enter visa-free or via quick e-visa. See the entry guide.</div></details>
+          <details class="faq-item" style="border:none"><summary class="faq-q" style="padding:.6rem 0;font-size:.94rem">How do I book trains?<span class="pl">+</span></summary><div class="faq-a" style="font-size:.9rem">See the <a href="transportation.html" class="txt-primary">transportation guide</a> for rail booking.</div></details>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="assets/site.js"></script>
+<script>
+UZ.mount('plan');
+const I=UZ.I,set=(id,s)=>{const el=document.getElementById(id);if(el)el.innerHTML=s;};
+set('c1',I.chevron);set('i1',I.info);set('i2',I.star);set('i3',I.ext);set('k1',I.pin);set('k2',I.clock);set('k3',I.info);
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Transportation in Uzbekistan — Rail, Air, Road & Metro</title>
+<meta name="description" content="Getting around Uzbekistan: the Afrosiyob high-speed train, domestic flights, intercity routes, taxis and the Tashkent metro. Schedules, fares and how to book."/>
+<link rel="stylesheet" href="assets/site.css"/>
+<style>
+.mode-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.mode{padding:1.3rem;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);transition:.2s}
+.mode:hover{border-color:var(--primary);box-shadow:var(--shadow-sm)}
+.mode .mi{width:46px;height:46px;border-radius:var(--r-sm);display:grid;place-items:center;background:var(--primary-soft);color:var(--primary-strong);margin-bottom:.8rem}
+.mode .mi svg{width:23px;height:23px}
+.route-row{display:grid;grid-template-columns:1.4fr 90px 90px 90px;gap:1rem;align-items:center;padding:.85rem 1.1rem;border-bottom:1px solid var(--border);font-size:.9rem}
+.route-row:last-child{border-bottom:none}
+.route-row:hover{background:var(--surface-2)}
+.route-row .rt{font-family:var(--font-mono);font-weight:700}
+@media (max-width:760px){.mode-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.route-row{grid-template-columns:1.4fr 80px}.route-row .rc,.route-row .rp{display:none}}
+</style>
+</head>
+<body data-hero="1">
+<div id="site-header"></div>
+
+<header class="page-hero-img" data-screen-label="Transportation">
+  <img src="assets/img/u2.jpg" alt="Afrosiyob high-speed train crossing a viaduct"/>
+  <div class="wrap">
+    <nav class="crumb"><a href="index.html">Home</a> <span id="c1"></span> <span>Transportation</span></nav>
+    <p class="hero-eyebrow">Transport hub</p>
+    <h1 style="margin-top:.8rem">Getting around Uzbekistan</h1>
+    <p class="lede">High-speed rail, domestic flights, intercity roads and ornate metros — how to move between cities quickly, comfortably and affordably.</p>
+  </div>
+</header>
+
+<nav class="subnav"><div class="wrap subnav-inner">
+  <a href="transportation.html" class="active">Overview</a>
+  <a href="#rail">Rail</a>
+  <a href="#routes">Routes &amp; fares</a>
+  <a href="#city">City transport</a>
+  <a href="#book">Book transfers</a>
+</div></nav>
+
+<section class="section-sm">
+  <div class="wrap">
+    <div class="mode-grid reveal" style="margin-top:1.4rem">
+      <div class="mode"><span class="mi" id="m1"></span><b>High-speed rail</b><p class="muted" style="font-size:.86rem;margin-top:.3rem">Afrosiyob links the main Silk Road cities at up to 230 km/h.</p></div>
+      <div class="mode"><span class="mi" id="m2"></span><b>Domestic flights</b><p class="muted" style="font-size:.86rem;margin-top:.3rem">Fast hops to Nukus, Urgench, Termez and the Fergana Valley.</p></div>
+      <div class="mode"><span class="mi" id="m3"></span><b>Road &amp; taxi</b><p class="muted" style="font-size:.86rem;margin-top:.3rem">Shared and private taxis reach every town and trailhead.</p></div>
+      <div class="mode"><span class="mi" id="m4"></span><b>City metro</b><p class="muted" style="font-size:.86rem;margin-top:.3rem">Tashkent's beautiful metro — four lines from $0.20.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:clamp(20px,3vw,40px)">
+  <div class="wrap">
+    <div class="detail-grid">
+      <div>
+        <div id="rail" class="reveal">
+          <p class="eyebrow gold">Flagship</p>
+          <h2 class="h2" style="margin:.6rem 0 1rem">The Afrosiyob high-speed train</h2>
+          <p class="lede">Spain's Talgo technology brought the Silk Road into the 21st century. The Afrosiyob connects Tashkent, Samarkand, Bukhara and Shakhrisabz in air-conditioned comfort — the single best way to travel between the historic cities.</p>
+          <div class="statrow reveal" style="margin-top:1.6rem">
+            <div><b>230</b><span>km/h top speed</span></div>
+            <div><b>2h10</b><span>Tashkent–Samarkand</span></div>
+            <div><b>3</b><span>Comfort classes</span></div>
+            <div><b>Daily</b><span>Multiple services</span></div>
+          </div>
+        </div>
+
+        <h2 id="routes" class="h3 reveal" style="margin:2.4rem 0 1rem">Popular routes &amp; fares</h2>
+        <div class="panel reveal">
+          <div class="route-row" style="background:var(--surface-2);font-family:var(--font-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-faint)"><span>Route</span><span class="rt">Time</span><span class="rc">Mode</span><span class="rp">From</span></div>
+          <div class="route-row"><span>Tashkent → Samarkand</span><span class="rt">2h10</span><span class="rc muted">Rail</span><span class="rp txt-primary" style="font-weight:600">$11</span></div>
+          <div class="route-row"><span>Samarkand → Bukhara</span><span class="rt">1h30</span><span class="rc muted">Rail</span><span class="rp txt-primary" style="font-weight:600">$9</span></div>
+          <div class="route-row"><span>Tashkent → Bukhara</span><span class="rt">3h50</span><span class="rc muted">Rail</span><span class="rp txt-primary" style="font-weight:600">$17</span></div>
+          <div class="route-row"><span>Tashkent → Khiva (Urgench)</span><span class="rt">1h15</span><span class="rc muted">Flight</span><span class="rp txt-primary" style="font-weight:600">$45</span></div>
+          <div class="route-row"><span>Tashkent → Nukus</span><span class="rt">1h45</span><span class="rc muted">Flight</span><span class="rp txt-primary" style="font-weight:600">$52</span></div>
+        </div>
+
+        <h2 id="city" class="h3 reveal" style="margin:2.4rem 0 1rem">Getting around cities</h2>
+        <div class="kpanel reveal">
+          <div class="krow"><span id="k1"></span><div><b>Tashkent metro</b> — four lines, ornate stations and flat fares; the fastest way across the capital.</div></div>
+          <div class="krow"><span id="k2"></span><div><b>Ride-hailing &amp; taxis</b> — apps and street taxis are cheap; agree fares in advance for street cabs.</div></div>
+          <div class="krow"><span id="k3"></span><div><b>Walking</b> — the historic cores of Samarkand, Bukhara and Khiva are compact and best on foot.</div></div>
+        </div>
+      </div>
+
+      <aside class="aside">
+        <div id="book" class="aside-offer reveal">
+          <span class="badge badge-spon">Partner offer</span>
+          <h4 style="margin:.7rem 0 .3rem">Book train tickets</h4>
+          <p class="muted" style="font-size:.88rem">Reserve Afrosiyob seats online in English, with e-tickets.</p>
+          <a href="offers.html" class="btn btn-gold btn-block" style="margin-top:.9rem">Search trains</a>
+        </div>
+        <div class="aside-offer reveal" style="background:linear-gradient(160deg,var(--primary-soft),var(--surface))">
+          <span class="badge badge-spon">Sponsored</span>
+          <h4 style="margin:.7rem 0 .3rem">Private driver &amp; car</h4>
+          <p class="muted" style="font-size:.88rem">Hire a car with driver for flexible multi-city trips.</p>
+          <div class="between" style="margin-top:.9rem"><span class="price txt-primary">$60<span style="font-size:.8rem;font-weight:400"> /day</span></span><a href="offers.html" class="btn btn-primary btn-sm">Reserve</a></div>
+        </div>
+        <div class="panel panel-pad reveal">
+          <h4 style="margin-bottom:.7rem">Related</h4>
+          <a href="airports.html" class="rel-card"><img src="assets/img/u9.jpg" alt="Airports"/><div><b>Airports &amp; flights</b><small>Domestic network</small></div></a>
+          <a href="guides.html" class="rel-card"><img src="assets/img/u4.jpg" alt="Guides"/><div><b>Itineraries</b><small>Plan your route</small></div></a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="assets/site.js"></script>
+<script>
+UZ.mount('plan');
+const I=UZ.I,set=(id,s)=>{const e=document.getElementById(id);if(e)e.innerHTML=s;};
+set('c1',I.chevron);set('m1',I.train);set('m2',I.plane);set('m3',I.car);set('m4',I.layers);
+set('k1',I.train);set('k2',I.car);set('k3',I.pin);
+</script>
+</body>
+</html>

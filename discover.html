@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Discover Uzbekistan — Explore by Interest</title>
+<meta name="description" content="Discover Uzbekistan by what you love: heritage, nature, cuisine, crafts and adventure. Curated collections, themes and inspiration for your Silk Road journey."/>
+<link rel="stylesheet" href="assets/site.css"/>
+<style>
+.theme-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.theme{position:relative;border-radius:var(--r);overflow:hidden;min-height:200px;display:flex;align-items:flex-end;color:#fff;isolation:isolate;transition:transform .25s var(--ease)}
+.theme:hover{transform:translateY(-4px)}
+.theme img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .6s var(--ease)}
+.theme:hover img{transform:scale(1.08)}
+.theme::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 40%,oklch(0.14 0.03 240/.82))}
+.theme b{padding:1rem;font-size:1.05rem;font-weight:700}
+.collection{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:300px;display:flex;align-items:flex-end;color:#fff;isolation:isolate}
+.collection img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.collection::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(120deg,oklch(0.14 0.03 240/.85),transparent 70%)}
+@media (max-width:900px){.theme-grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:560px){.theme-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body data-hero="1">
+<div id="site-header"></div>
+
+<header class="page-hero-img" data-screen-label="Discover experience">
+  <img src="assets/img/u3.jpg" alt="Charvak lake and the Tien-Shan mountains"/>
+  <div class="wrap">
+    <nav class="crumb"><a href="index.html">Home</a> <span id="c1"></span> <span>Discover</span></nav>
+    <p class="hero-eyebrow">Discovery</p>
+    <h1 style="margin-top:.8rem;max-width:16ch">Discover Uzbekistan your way</h1>
+    <p class="lede">Heritage, nature, cuisine, crafts or adventure — start from what you love and we'll shape the journey around it.</p>
+  </div>
+</header>
+
+<section class="section-sm">
+  <div class="wrap">
+    <h2 class="eyebrow reveal" style="margin-top:1.4rem">Explore by interest</h2>
+    <div class="theme-grid reveal" style="margin-top:1rem">
+      <a href="unesco.html" class="theme"><img src="assets/img/u7.jpg" alt="Heritage"/><b>Heritage</b></a>
+      <a href="discover.html" class="theme"><img src="assets/img/u3.jpg" alt="Nature"/><b>Nature</b></a>
+      <a href="guides.html" class="theme"><img src="assets/img/u1.jpg" alt="Cuisine"/><b>Cuisine</b></a>
+      <a href="guides.html" class="theme"><img src="assets/img/u4.jpg" alt="Crafts"/><b>Crafts</b></a>
+      <a href="discover.html" class="theme"><img src="assets/img/u3.jpg" alt="Adventure"/><b>Adventure</b></a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:clamp(20px,3vw,40px)">
+  <div class="wrap">
+    <div class="between reveal" style="margin-bottom:1.6rem;align-items:flex-end">
+      <div><p class="eyebrow gold">Curated</p><h2 class="h2" style="margin-top:.5rem">Featured collections</h2></div>
+      <a href="cities.html" class="btn btn-ghost">All destinations <span id="a1"></span></a>
+    </div>
+    <div class="grid" style="grid-template-columns:1.6fr 1fr;gap:18px">
+      <a href="city-samarkand.html" class="collection reveal">
+        <img src="assets/img/u8.jpg" alt="Silk Road cities"/>
+        <div style="padding:1.8rem;max-width:440px"><span class="badge badge-gold" style="background:rgba(255,255,255,.16);color:#fff">Collection · 4 cities</span><h3 style="color:#fff;margin:.6rem 0;font-size:clamp(1.4rem,2.2vw,2rem)">The great Silk Road cities</h3><p style="color:rgba(255,255,255,.86)">Samarkand, Bukhara, Khiva and Shakhrisabz — the essential heritage circuit.</p></div>
+      </a>
+      <div class="stack gap reveal">
+        <a href="discover.html" class="collection" style="min-height:140px"><img src="assets/img/u3.jpg" alt="Mountains"/><div style="padding:1.2rem"><h3 style="color:#fff;font-size:1.3rem">Mountains &amp; lakes</h3></div></a>
+        <a href="guides.html" class="collection" style="min-height:140px"><img src="assets/img/u4.jpg" alt="Living crafts"/><div style="padding:1.2rem"><h3 style="color:#fff;font-size:1.3rem">Living crafts &amp; bazaars</h3></div></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm seo-band">
+  <div class="wrap">
+    <div class="grid g3 reveal">
+      <div class="kpanel"><div class="row gap-s" style="margin-bottom:.5rem"><span id="i1" class="txt-primary"></span><b>When to go</b></div><p class="muted" style="font-size:.92rem">Spring and autumn bring the best weather; summer is hot, winter quiet and atmospheric.</p></div>
+      <div class="kpanel"><div class="row gap-s" style="margin-bottom:.5rem"><span id="i2" class="txt-primary"></span><b>How long</b></div><p class="muted" style="font-size:.92rem">A week covers the classic route; two weeks lets you slow down and go deeper.</p></div>
+      <div class="kpanel"><div class="row gap-s" style="margin-bottom:.5rem"><span id="i3" class="txt-primary"></span><b>Getting in</b></div><p class="muted" style="font-size:.92rem">Visa-free or e-visa for most nationalities; fly into Tashkent or Samarkand.</p></div>
+    </div>
+    <div class="tc" style="margin-top:2rem"><a href="offers.html" class="btn btn-primary btn-lg">Start planning your trip <span id="a2"></span></a></div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="assets/site.js"></script>
+<script>
+UZ.mount('discover');
+const I=UZ.I,set=(id,s)=>{const el=document.getElementById(id);if(el)el.innerHTML=s;};
+set('c1',I.chevron);set('a1',I.arrow);set('a2',I.arrow);set('i1',I.cal);set('i2',I.clock);set('i3',I.plane);
+</script>
+</body>
+</html>

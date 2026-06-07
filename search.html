@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Search — Uzbekistan Gateway</title>
+<meta name="description" content="Search across destinations, airports, attractions, guides and news on the Uzbekistan aviation and travel gateway."/>
+<link rel="stylesheet" href="assets/site.css"/>
+<style>
+.searchhero{padding-top:calc(var(--header-h) + 32px);padding-bottom:1.4rem;background:var(--bg-subtle);border-bottom:1px solid var(--border)}
+.bigsearch{display:flex;align-items:center;gap:.7rem;background:var(--surface);border:1px solid var(--border-strong);border-radius:var(--r);padding:.6rem .6rem .6rem 1.1rem;box-shadow:var(--shadow-sm)}
+.bigsearch svg{width:22px;height:22px;color:var(--text-faint);flex:none}
+.bigsearch input{flex:1;border:none;background:transparent;font-size:1.1rem;font-weight:500;color:var(--text)}
+.bigsearch input:focus{outline:none}
+.facet{display:flex;flex-direction:column;gap:.2rem}
+.facet label{display:flex;align-items:center;gap:.5rem;padding:.4rem .2rem;font-size:.9rem;color:var(--text-muted);cursor:pointer}
+.facet input{accent-color:var(--primary)}
+.ai-answer{background:linear-gradient(160deg,var(--primary-soft),var(--surface));border:1px solid var(--border);border-radius:var(--r-lg);padding:1.4rem}
+.res{display:flex;gap:1.1rem;padding:1.1rem 0;border-bottom:1px solid var(--border)}
+.res img{width:130px;height:92px;object-fit:cover;border-radius:var(--r-sm);flex:none}
+.res .rurl{font-family:var(--font-mono);font-size:.72rem;color:var(--primary);letter-spacing:.02em}
+.res h3{font-size:1.12rem;margin:.2rem 0}
+.res:hover h3{color:var(--primary)}
+@media (max-width:760px){.res img{width:90px;height:70px}}
+</style>
+</head>
+<body>
+<div id="site-header" data-solid="1"></div>
+
+<section class="searchhero">
+  <div class="wrap">
+    <nav class="crumb" style="margin-bottom:1rem"><a href="index.html">Home</a> <span id="c1"></span> <span>Search</span></nav>
+    <form class="bigsearch reveal" onsubmit="return false">
+      <span id="si"></span>
+      <input id="q" value="samarkand" aria-label="Search"/>
+      <button class="btn btn-primary">Search</button>
+    </form>
+    <div class="row gap-s wrap-flex" style="margin-top:.9rem;font-size:.84rem">
+      <span class="muted">Did you mean:</span><a href="search.html" class="chip">Samarkand airport</a><a href="search.html" class="chip">Samarkand hotels</a><a href="search.html" class="chip">Registan</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="wrap">
+    <div class="detail-grid" style="grid-template-columns:240px 1fr;gap:clamp(24px,3vw,44px)">
+      <aside class="aside" style="gap:14px">
+        <div class="panel panel-pad reveal">
+          <h4 style="margin-bottom:.7rem">Type</h4>
+          <div class="facet">
+            <label><input type="checkbox" checked/> All <span class="muted" style="margin-left:auto">42</span></label>
+            <label><input type="checkbox"/> Destinations <span class="muted" style="margin-left:auto">12</span></label>
+            <label><input type="checkbox"/> Airports <span class="muted" style="margin-left:auto">3</span></label>
+            <label><input type="checkbox"/> Attractions <span class="muted" style="margin-left:auto">14</span></label>
+            <label><input type="checkbox"/> Guides <span class="muted" style="margin-left:auto">8</span></label>
+            <label><input type="checkbox"/> News <span class="muted" style="margin-left:auto">5</span></label>
+          </div>
+        </div>
+        <div class="panel panel-pad reveal">
+          <h4 style="margin-bottom:.7rem">Region</h4>
+          <div class="facet">
+            <label><input type="checkbox"/> Samarkand</label>
+            <label><input type="checkbox"/> Bukhara</label>
+            <label><input type="checkbox"/> Khiva</label>
+            <label><input type="checkbox"/> Tashkent</label>
+          </div>
+        </div>
+      </aside>
+
+      <div>
+        <!-- AI answer / GEO -->
+        <div class="ai-answer reveal" style="margin-bottom:1.6rem">
+          <div class="row between" style="margin-bottom:.7rem"><span class="eyebrow"><span id="ai"></span> AI answer</span><span class="badge badge-cobalt">GEO-ready</span></div>
+          <p style="font-size:1.02rem;line-height:1.6"><strong>Samarkand</strong> is a UNESCO-listed Silk Road city in Uzbekistan, famous for the Registan, Shah-i-Zinda and Gur-e-Amir. It's reachable in 2h10 by Afrosiyob train from Tashkent, or via <a href="airport-samarkand.html">Samarkand Airport (SKD)</a>.</p>
+          <div class="row gap-s wrap-flex" style="margin-top:1rem"><a href="city-samarkand.html" class="chip">City guide</a><a href="attraction-registan.html" class="chip">Registan</a><a href="airport-samarkand.html" class="chip">SKD airport</a></div>
+        </div>
+
+        <div class="between reveal" style="margin-bottom:.6rem"><span class="muted" style="font-size:.88rem">About 42 results</span><select class="select" style="width:auto;font-size:.85rem"><option>Most relevant</option><option>Newest</option></select></div>
+
+        <div class="reveal">
+          <a href="city-samarkand.html" class="res"><img src="assets/img/u7.jpg" alt="Samarkand"/><div><div class="rurl">uzbekistan.gateway / cities / samarkand</div><h3>Samarkand Travel Guide — Registan &amp; Heritage</h3><p class="muted" style="font-size:.9rem">The crossroads of cultures — Registan, Shah-i-Zinda and Gur-e-Amir. How to get there, where to stay and the best time to visit.</p><div class="row gap-s" style="margin-top:.4rem"><span class="badge badge-gold">Destination</span><span class="badge badge-teal">UNESCO</span></div></div></a>
+          <a href="attraction-registan.html" class="res"><img src="assets/img/u8.jpg" alt="Registan"/><div><div class="rurl">uzbekistan.gateway / attractions / registan</div><h3>The Registan, Samarkand — Visiting Guide</h3><p class="muted" style="font-size:.9rem">Three monumental madrasahs framing the grandest square of the Islamic world. History, tickets and opening hours.</p><div class="row gap-s" style="margin-top:.4rem"><span class="badge badge-cobalt">Attraction</span></div></div></a>
+          <a href="airport-samarkand.html" class="res"><img src="assets/img/u9.jpg" alt="SKD"/><div><div class="rurl">uzbekistan.gateway / airports / samarkand</div><h3>Samarkand International Airport (SKD)</h3><p class="muted" style="font-size:.9rem">Live flights, the 2022 terminal, transfers and services for the Silk Road's crown jewel.</p><div class="row gap-s" style="margin-top:.4rem"><span class="badge badge-teal">Airport</span><span class="badge badge-live">Live</span></div></div></a>
+          <a href="guide-detail.html" class="res"><img src="assets/img/u4.jpg" alt="Guide"/><div><div class="rurl">uzbekistan.gateway / guides / classic-silk-road</div><h3>The Classic Silk Road in 7 days</h3><p class="muted" style="font-size:.9rem">A day-by-day itinerary through Tashkent, Samarkand, Bukhara and Khiva.</p><div class="row gap-s" style="margin-top:.4rem"><span class="badge badge-gold">Guide</span></div></div></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="assets/site.js"></script>
+<script>
+UZ.mount('');
+const I=UZ.I,set=(id,s)=>{const el=document.getElementById(id);if(el)el.innerHTML=s;};
+set('c1',I.chevron);set('si',I.search);set('ai',I.star);
+// reflect ?q=
+const q=new URLSearchParams(location.search).get('q');if(q){document.getElementById('q').value=q;}
+</script>
+</body>
+</html>
