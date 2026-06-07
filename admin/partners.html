@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Partners — UZBEKISTAN Gateway Admin</title>
+<link rel="stylesheet" href="../assets/site.css"/>
+<link rel="stylesheet" href="../assets/admin.css"/>
+</head>
+<body class="admin-body">
+<div class="admin">
+  <div id="admin-side"></div>
+  <main class="amain">
+    <div id="admin-top" data-title="Partners"></div>
+    <div class="acontent" data-screen-label="Admin partners">
+
+      <div class="toolbar">
+        <div><h2 style="font-size:1.4rem">Partner management</h2><p class="muted" style="font-size:.9rem">Featured listings, premium placements &amp; applications</p></div>
+        <div class="grow"></div>
+        <button class="btn btn-ghost btn-sm"><span id="i1"></span> Plans</button>
+        <button class="btn btn-primary btn-sm"><span id="i2"></span> Add partner</button>
+      </div>
+
+      <div class="kpi-grid">
+        <div class="kpi"><div class="kt">Active partners</div><b>34</b><span class="trend up">▲ 5 this month</span></div>
+        <div class="kpi"><div class="kt">Featured listings</div><b>12</b><span class="trend up">premium</span></div>
+        <div class="kpi"><div class="kt">Pending applications</div><b>7</b><span class="trend down">awaiting review</span></div>
+        <div class="kpi"><div class="kt">Partner revenue</div><b>$9.2k</b><span class="trend up">▲ 14%</span></div>
+      </div>
+
+      <div class="grid" style="grid-template-columns:1.4fr 1fr;gap:18px;margin-top:18px;align-items:start">
+        <div class="acard">
+          <div class="acard-head"><h3>Partners</h3><div class="row gap-s"><button class="chip on">All</button><button class="chip">Featured</button><button class="chip">Hotels</button><button class="chip">Tours</button></div></div>
+          <table class="table">
+            <thead><tr><th>Partner</th><th class="hide-sm">Type</th><th class="hide-sm">Plan</th><th>Status</th><th style="width:60px"></th></tr></thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+        <div class="acard">
+          <div class="acard-head"><h3>Pending applications</h3><span class="badge badge-gold">7</span></div>
+          <div class="acard-pad stack gap" style="gap:.9rem">
+            <div class="row between" style="padding-bottom:.8rem;border-bottom:1px solid var(--border)"><div><b style="font-size:.9rem">Registan Boutique Hotel</b><div class="muted" style="font-size:.8rem">Samarkand · Hotel · Featured plan</div></div><div class="row gap-s"><button class="btn btn-primary btn-sm">Approve</button><button class="iconbtn" id="d1"></button></div></div>
+            <div class="row between" style="padding-bottom:.8rem;border-bottom:1px solid var(--border)"><div><b style="font-size:.9rem">Silk Road Tours LLC</b><div class="muted" style="font-size:.8rem">Tashkent · Tours · Standard</div></div><div class="row gap-s"><button class="btn btn-primary btn-sm">Approve</button><button class="iconbtn" id="d2"></button></div></div>
+            <div class="row between" style="padding-bottom:.8rem;border-bottom:1px solid var(--border)"><div><b style="font-size:.9rem">Khiva Caravan Guesthouse</b><div class="muted" style="font-size:.8rem">Khiva · Stay · Standard</div></div><div class="row gap-s"><button class="btn btn-primary btn-sm">Approve</button><button class="iconbtn" id="d3"></button></div></div>
+            <div class="row between"><div><b style="font-size:.9rem">Bukhara Craft Bazaar</b><div class="muted" style="font-size:.8rem">Bukhara · Shopping · Standard</div></div><div class="row gap-s"><button class="btn btn-primary btn-sm">Approve</button><button class="iconbtn" id="d4"></button></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+<script src="../assets/admin.js"></script>
+<script>
+ADMIN.mount('partners');
+const set=(id,s)=>{const e=document.getElementById(id);if(e)e.innerHTML=s;};
+set('i1',AI.ext);set('i2',AI.plus);['d1','d2','d3','d4'].forEach(id=>set(id,AI.dots));
+const data=[
+  ['Hyatt Regency Tashkent','Hotel','Featured','pub','Active'],
+  ['Silk Road Samarkand','Hotel','Featured','pub','Active'],
+  ['Advantour','Tours','Premium','pub','Active'],
+  ['Tashkent City Mall','Retail','Standard','pub','Active'],
+  ['Minzifa Boutique','Hotel','Standard','review','Review'],
+  ['Orient Star Khiva','Hotel','Featured','pub','Active'],
+  ['Caravan Café','Dining','Standard','draft','Inactive']
+];
+const planColor={'Featured':'badge-gold','Premium':'badge-cobalt','Standard':'badge-spon'};
+document.getElementById('rows').innerHTML=data.map(d=>`
+  <tr>
+    <td><div class="rowtitle"><span class="badge badge-teal mono" style="width:34px;justify-content:center">${d[0][0]}</span><b>${d[0]}</b></div></td>
+    <td class="hide-sm">${d[1]}</td>
+    <td class="hide-sm"><span class="badge ${planColor[d[2]]}">${d[2]}</span></td>
+    <td><span class="pill ${d[3]}">${d[4]}</span></td>
+    <td><button class="iconbtn">${AI.dots}</button></td>
+  </tr>`).join('');
+</script>
+</body>
+</html>

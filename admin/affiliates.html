@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Affiliates — UZBEKISTAN Gateway Admin</title>
+<link rel="stylesheet" href="../assets/site.css"/>
+<link rel="stylesheet" href="../assets/admin.css"/>
+</head>
+<body class="admin-body">
+<div class="admin">
+  <div id="admin-side"></div>
+  <main class="amain">
+    <div id="admin-top" data-title="Affiliates"></div>
+    <div class="acontent" data-screen-label="Admin affiliates">
+
+      <div class="toolbar">
+        <div><h2 style="font-size:1.4rem">Affiliate management</h2><p class="muted" style="font-size:.9rem">Programs, offers &amp; placements · native monetization</p></div>
+        <div class="grow"></div>
+        <button class="btn btn-ghost btn-sm"><span id="i1"></span> Placements</button>
+        <button class="btn btn-primary btn-sm"><span id="i2"></span> Add program</button>
+      </div>
+
+      <div class="kpi-grid">
+        <div class="kpi"><div class="kt">Active programs</div><b>9</b><span class="trend up">4 categories</span></div>
+        <div class="kpi"><div class="kt">Clicks (30d)</div><b>21.8k</b><span class="trend up">▲ 11%</span></div>
+        <div class="kpi"><div class="kt">Conversion</div><b>3.4%</b><span class="trend up">▲ 0.3pt</span></div>
+        <div class="kpi"><div class="kt">Revenue (30d)</div><b>$18.6k</b><span class="trend up">▲ 9.1%</span></div>
+      </div>
+
+      <div class="acard" style="margin-top:18px">
+        <div class="acard-head"><h3>Affiliate programs</h3><div class="row gap-s"><button class="chip on">All</button><button class="chip">Flights</button><button class="chip">Hotels</button><button class="chip">Services</button></div></div>
+        <table class="table">
+          <thead><tr><th>Program</th><th class="hide-sm">Category</th><th class="hide-sm">Commission</th><th class="hide-sm">Clicks</th><th>Revenue</th><th>Status</th><th style="width:60px"></th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+
+      <div class="grid" style="grid-template-columns:1fr 1fr;gap:18px;margin-top:18px">
+        <div class="acard">
+          <div class="acard-head"><h3>Placement performance</h3></div>
+          <div class="acard-pad stack gap-s" style="font-size:.88rem">
+            <div class="row between"><span>Homepage · featured offers</span><span class="row gap-s"><span class="muted mono">8.2k clicks</span><span class="pill pub">Live</span></span></div>
+            <div class="row between"><span>Airport detail · sidebar</span><span class="row gap-s"><span class="muted mono">5.1k clicks</span><span class="pill pub">Live</span></span></div>
+            <div class="row between"><span>City detail · where to stay</span><span class="row gap-s"><span class="muted mono">4.4k clicks</span><span class="pill pub">Live</span></span></div>
+            <div class="row between"><span>Offers page · flight deals</span><span class="row gap-s"><span class="muted mono">3.0k clicks</span><span class="pill pub">Live</span></span></div>
+            <div class="row between"><span>Search · AI answer footer</span><span class="row gap-s"><span class="muted mono">1.1k clicks</span><span class="pill review">Testing</span></span></div>
+          </div>
+        </div>
+        <div class="acard">
+          <div class="acard-head"><h3>Compliance &amp; UX</h3></div>
+          <div class="acard-pad stack gap-s" style="font-size:.88rem">
+            <div class="row gap-s"><span class="pill pub"></span> All placements labelled “Partner / Sponsored”</div>
+            <div class="row gap-s"><span class="pill pub"></span> rel="sponsored nofollow" on outbound links</div>
+            <div class="row gap-s"><span class="pill pub"></span> No banner / interstitial ad formats</div>
+            <div class="row gap-s"><span class="pill pub"></span> Frequency caps to protect experience</div>
+            <div class="row gap-s"><span class="pill review"></span> Disclosure copy pending RU translation</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+<script src="../assets/admin.js"></script>
+<script>
+ADMIN.mount('affiliates');
+const set=(id,s)=>{const e=document.getElementById(id);if(e)e.innerHTML=s;};
+set('i1',AI.ext);set('i2',AI.plus);
+const data=[
+  ['Uzbekistan Airways','Flights','2.5%','6.1k','$5,240','pub','Active'],
+  ['Booking partner','Hotels','4.0%','5.8k','$6,120','pub','Active'],
+  ['flydubai','Flights','2.0%','3.2k','$2,180','pub','Active'],
+  ['Travel insurance Co.','Insurance','12%','2.4k','$1,940','pub','Active'],
+  ['eSIM provider','Connectivity','15%','1.9k','$1,310','pub','Active'],
+  ['GetYourGuide tours','Tours','8%','1.6k','$1,090','review','Paused'],
+  ['Car rental network','Transfers','6%','0.8k','$640','pub','Active']
+];
+document.getElementById('rows').innerHTML=data.map(d=>`
+  <tr>
+    <td><div class="rowtitle"><span class="badge badge-gold mono" style="width:34px;justify-content:center">${d[0][0]}</span><b>${d[0]}</b></div></td>
+    <td class="hide-sm"><span class="badge badge-teal">${d[1]}</span></td>
+    <td class="hide-sm mono">${d[2]}</td>
+    <td class="hide-sm muted">${d[3]}</td>
+    <td><b class="txt-primary">${d[4]}</b></td>
+    <td><span class="pill ${d[5]}">${d[6]}</span></td>
+    <td><button class="iconbtn">${AI.dots}</button></td>
+  </tr>`).join('');
+</script>
+</body>
+</html>

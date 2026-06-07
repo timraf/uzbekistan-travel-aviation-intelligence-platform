@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Search Management — UZBEKISTAN Gateway Admin</title>
+<link rel="stylesheet" href="../assets/site.css"/>
+<link rel="stylesheet" href="../assets/admin.css"/>
+</head>
+<body class="admin-body">
+<div class="admin">
+  <div id="admin-side"></div>
+  <main class="amain">
+    <div id="admin-top" data-title="Search Management"></div>
+    <div class="acontent" data-screen-label="Admin search">
+
+      <div class="toolbar">
+        <div><h2 style="font-size:1.4rem">Search management</h2><p class="muted" style="font-size:.9rem">Index, synonyms, ranking &amp; AI answers</p></div>
+        <div class="grow"></div>
+        <button class="btn btn-ghost btn-sm"><span id="i1"></span> Reindex</button>
+        <button class="btn btn-primary btn-sm">Save settings</button>
+      </div>
+
+      <div class="kpi-grid">
+        <div class="kpi"><div class="kt">Indexed documents</div><b>1,284</b><span class="trend up">all entities</span></div>
+        <div class="kpi"><div class="kt">Searches (30d)</div><b>54.2k</b><span class="trend up">▲ 8%</span></div>
+        <div class="kpi"><div class="kt">No-result rate</div><b>2.1%</b><span class="trend up">▼ improving</span></div>
+        <div class="kpi"><div class="kt">AI answers served</div><b>9.4k</b><span class="trend up">GEO</span></div>
+      </div>
+
+      <div class="grid" style="grid-template-columns:1fr 1fr;gap:18px;margin-top:18px;align-items:start">
+        <div class="acard">
+          <div class="acard-head"><h3>Top searches</h3></div>
+          <table class="table">
+            <thead><tr><th>Query</th><th class="hide-sm">Volume</th><th>Results</th></tr></thead>
+            <tbody>
+              <tr><td><b style="font-size:.88rem">samarkand</b></td><td class="hide-sm muted">8,210</td><td><span class="pill pub">42</span></td></tr>
+              <tr><td><b style="font-size:.88rem">tashkent airport</b></td><td class="hide-sm muted">5,940</td><td><span class="pill pub">12</span></td></tr>
+              <tr><td><b style="font-size:.88rem">registan</b></td><td class="hide-sm muted">4,120</td><td><span class="pill pub">8</span></td></tr>
+              <tr><td><b style="font-size:.88rem">visa uzbekistan</b></td><td class="hide-sm muted">3,880</td><td><span class="pill pub">6</span></td></tr>
+              <tr><td><b style="font-size:.88rem">afrosiyob tickets</b></td><td class="hide-sm muted">2,510</td><td><span class="pill pub">4</span></td></tr>
+              <tr><td><b style="font-size:.88rem">aral sea tour</b></td><td class="hide-sm muted">410</td><td><span class="pill review">0 — add content</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="stack gap" style="gap:18px">
+          <div class="acard">
+            <div class="acard-head"><h3>Synonyms &amp; redirects</h3><button class="btn btn-ghost btn-sm"><span id="i2"></span> Add</button></div>
+            <div class="acard-pad stack gap-s" style="font-size:.88rem">
+              <div class="row between"><span><b>khiva</b> → ichan kala, itchan qala</span><button class="iconbtn" id="r1"></button></div>
+              <div class="row between"><span><b>plov</b> → osh, pilaf</span><button class="iconbtn" id="r2"></button></div>
+              <div class="row between"><span><b>tas</b> → tashkent airport</span><button class="iconbtn" id="r3"></button></div>
+              <div class="row between"><span><b>silk road</b> → great silk road</span><button class="iconbtn" id="r4"></button></div>
+            </div>
+          </div>
+          <div class="acard">
+            <div class="acard-head"><h3>AI answer settings</h3><span class="badge badge-cobalt">GEO</span></div>
+            <div class="acard-pad stack gap-s">
+              <div class="row between"><span style="font-size:.88rem">Generate AI answers</span><div class="switch on"></div></div>
+              <div class="row between"><span style="font-size:.88rem">Cite source pages</span><div class="switch on"></div></div>
+              <div class="row between"><span style="font-size:.88rem">Allow external AI crawlers</span><div class="switch on"></div></div>
+              <div class="row between"><span style="font-size:.88rem">Answer in user language</span><div class="switch on"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+<script src="../assets/admin.js"></script>
+<script>
+ADMIN.mount('search');
+const set=(id,s)=>{const e=document.getElementById(id);if(e)e.innerHTML=s;};
+set('i1',AI.search);set('i2',AI.plus);['r1','r2','r3','r4'].forEach(id=>set(id,AI.trash));
+document.querySelectorAll('.switch').forEach(sw=>sw.onclick=()=>sw.classList.toggle('on'));
+</script>
+</body>
+</html>

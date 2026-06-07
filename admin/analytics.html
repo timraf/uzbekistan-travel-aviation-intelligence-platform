@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Analytics — UZBEKISTAN Gateway Admin</title>
+<link rel="stylesheet" href="../assets/site.css"/>
+<link rel="stylesheet" href="../assets/admin.css"/>
+<style>
+.geobar{display:flex;align-items:center;gap:.7rem;padding:.5rem 0;font-size:.88rem}
+.geobar .gb{flex:1;height:8px;border-radius:999px;background:var(--surface-3);overflow:hidden}
+.geobar .gb i{display:block;height:100%;background:var(--primary);border-radius:999px}
+</style>
+</head>
+<body class="admin-body">
+<div class="admin">
+  <div id="admin-side"></div>
+  <main class="amain">
+    <div id="admin-top" data-title="Analytics"></div>
+    <div class="acontent" data-screen-label="Admin analytics">
+
+      <div class="toolbar">
+        <div><h2 style="font-size:1.4rem">Analytics</h2><p class="muted" style="font-size:.9rem">Audience, content &amp; monetization performance</p></div>
+        <div class="grow"></div>
+        <select class="select" style="width:auto;font-size:.85rem"><option>Last 30 days</option><option>Last 7 days</option><option>Last quarter</option></select>
+        <button class="btn btn-ghost btn-sm"><span id="i1"></span> Export</button>
+      </div>
+
+      <div class="kpi-grid">
+        <div class="kpi"><div class="kt">Sessions</div><b>412k</b><span class="trend up">▲ 14.2%</span></div>
+        <div class="kpi"><div class="kt">Avg. engagement</div><b>3m 24s</b><span class="trend up">▲ 6%</span></div>
+        <div class="kpi"><div class="kt">Affiliate clicks</div><b>21.8k</b><span class="trend up">▲ 11%</span></div>
+        <div class="kpi"><div class="kt">Revenue</div><b>$18.6k</b><span class="trend up">▲ 9.1%</span></div>
+      </div>
+
+      <div class="acard" style="margin-top:18px">
+        <div class="acard-head"><h3>Sessions over time</h3><div class="row gap-s"><span class="badge badge-teal">Organic</span><span class="badge badge-gold">AI search</span><span class="badge badge-cobalt">Direct</span></div></div>
+        <div class="acard-pad"><div class="bars" id="bars" style="height:180px"></div><div class="row between" style="margin-top:.7rem;font-size:.76rem;color:var(--text-faint)"><span>Week 1</span><span>Week 2</span><span>Week 3</span><span>Week 4</span></div></div>
+      </div>
+
+      <div class="grid" style="grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:18px">
+        <div class="acard">
+          <div class="acard-head"><h3>Top countries</h3></div>
+          <div class="acard-pad">
+            <div class="geobar"><span style="width:88px">🇺🇿 Uzbekistan</span><span class="gb"><i style="width:100%"></i></span><b class="mono">31%</b></div>
+            <div class="geobar"><span style="width:88px">🇷🇺 Russia</span><span class="gb"><i style="width:62%"></i></span><b class="mono">19%</b></div>
+            <div class="geobar"><span style="width:88px">🇬🇧 UK</span><span class="gb"><i style="width:40%"></i></span><b class="mono">12%</b></div>
+            <div class="geobar"><span style="width:88px">🇩🇪 Germany</span><span class="gb"><i style="width:30%"></i></span><b class="mono">9%</b></div>
+            <div class="geobar"><span style="width:88px">🇺🇸 USA</span><span class="gb"><i style="width:26%"></i></span><b class="mono">8%</b></div>
+          </div>
+        </div>
+        <div class="acard">
+          <div class="acard-head"><h3>By language</h3></div>
+          <div class="acard-pad row gap-l" style="align-items:center">
+            <div class="donut"><div class="hole"><div><b class="serif" style="font-size:1.2rem;color:var(--primary)">EN</b><div style="font-size:.66rem;color:var(--text-faint)">52%</div></div></div></div>
+            <div class="stack gap-s" style="font-size:.84rem">
+              <div class="row gap-s"><span style="width:10px;height:10px;border-radius:3px;background:var(--primary)"></span> English 52%</div>
+              <div class="row gap-s"><span style="width:10px;height:10px;border-radius:3px;background:var(--gold)"></span> Russian 31%</div>
+              <div class="row gap-s"><span style="width:10px;height:10px;border-radius:3px;background:var(--cobalt)"></span> Uzbek 17%</div>
+            </div>
+          </div>
+        </div>
+        <div class="acard">
+          <div class="acard-head"><h3>Top pages</h3></div>
+          <div class="acard-pad stack gap-s" style="font-size:.86rem">
+            <div class="row between"><span>/cities/samarkand</span><b class="mono">41.2k</b></div>
+            <div class="row between"><span>/airports/tas</span><b class="mono">28.7k</b></div>
+            <div class="row between"><span>/attractions/registan</span><b class="mono">22.1k</b></div>
+            <div class="row between"><span>/transportation</span><b class="mono">15.9k</b></div>
+            <div class="row between"><span>/guides/silk-road-7d</span><b class="mono">12.4k</b></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+<script src="../assets/admin.js"></script>
+<script>
+ADMIN.mount('analytics');
+const set=(id,s)=>{const e=document.getElementById(id);if(e)e.innerHTML=s;};
+set('i1',AI.ext);
+const h=[50,58,54,66,60,72,68,80,74,86,82,90,86,94,88,96,92,98];
+document.getElementById('bars').innerHTML=h.map(v=>`<div class="bar"><i style="height:${v}%"></i></div>`).join('');
+</script>
+</body>
+</html>

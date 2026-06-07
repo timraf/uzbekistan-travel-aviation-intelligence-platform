@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Media Library — UZBEKISTAN Gateway Admin</title>
+<link rel="stylesheet" href="../assets/site.css"/>
+<link rel="stylesheet" href="../assets/admin.css"/>
+<style>
+.media-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px}
+.masset{border:1px solid var(--border);border-radius:var(--r);overflow:hidden;background:var(--surface);cursor:pointer;transition:.16s}
+.masset:hover{border-color:var(--primary);box-shadow:var(--shadow-sm)}
+.masset.sel{border-color:var(--primary);box-shadow:0 0 0 2px var(--primary)}
+.masset .mt{aspect-ratio:4/3;overflow:hidden;position:relative}
+.masset .mt img{width:100%;height:100%;object-fit:cover}
+.masset .mb{padding:.55rem .7rem}
+.masset .mb b{font-size:.8rem;font-weight:600;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.masset .mb small{font-size:.68rem;color:var(--text-faint);font-family:var(--font-mono)}
+.dropzone{border:2px dashed var(--border-strong);border-radius:var(--r);padding:1.6rem;text-align:center;background:var(--surface);transition:.16s}
+.dropzone:hover{border-color:var(--primary);background:var(--primary-soft)}
+</style>
+</head>
+<body class="admin-body">
+<div class="admin">
+  <div id="admin-side"></div>
+  <main class="amain">
+    <div id="admin-top" data-title="Media Library"></div>
+    <div class="acontent" data-screen-label="Admin media library">
+
+      <div class="toolbar">
+        <div><h2 style="font-size:1.4rem">Media Library</h2><p class="muted" style="font-size:.9rem">1,940 assets · 12.4 GB of 50 GB used</p></div>
+        <div class="grow"></div>
+        <button class="btn btn-ghost btn-sm"><span id="i1"></span> Filter</button>
+        <button class="btn btn-primary btn-sm"><span id="i2"></span> Upload</button>
+      </div>
+
+      <div class="grid" style="grid-template-columns:1fr 300px;gap:18px;align-items:start">
+        <div>
+          <div class="dropzone reveal" style="margin-bottom:1.2rem">
+            <div class="row gap-s" style="justify-content:center;color:var(--text-muted)"><span id="up"></span> Drag &amp; drop images here, or <b class="txt-primary">browse files</b></div>
+            <small class="muted">JPG, PNG, WebP, SVG · up to 20 MB · auto-optimised &amp; responsive variants generated</small>
+          </div>
+          <div class="row gap-s wrap-flex" style="margin-bottom:1rem">
+            <button class="chip on">All media</button><button class="chip">Images</button><button class="chip">Hero</button><button class="chip">Cities</button><button class="chip">Attractions</button><button class="chip">Unused</button>
+          </div>
+          <div class="media-grid" id="mgrid"></div>
+        </div>
+
+        <aside class="acard reveal" style="position:sticky;top:84px">
+          <div class="mt" style="aspect-ratio:4/3;overflow:hidden"><img src="../assets/img/u7.jpg" alt="" style="width:100%;height:100%;object-fit:cover"/></div>
+          <div class="acard-pad">
+            <h3 style="font-size:.95rem">registan-sunset.jpg</h3>
+            <div class="spec"><span class="sk">Dimensions</span><span class="sv">1600×900</span></div>
+            <div class="spec"><span class="sk">Size</span><span class="sv">284 KB</span></div>
+            <div class="spec"><span class="sk">Used in</span><span class="sv">6 pages</span></div>
+            <div class="field" style="margin-top:1rem"><label class="label">Alt text (EN)</label><input class="input" value="Registan Square at golden hour"/></div>
+            <div class="field" style="margin-top:.6rem"><label class="label">Alt text (UZ)</label><input class="input" placeholder="Tarjima kerak…"/></div>
+            <div class="row gap-s" style="margin-top:1rem"><button class="btn btn-primary btn-sm btn-block">Save</button><button class="iconbtn" id="del" title="Delete"></button></div>
+          </div>
+        </aside>
+      </div>
+
+    </div>
+  </main>
+</div>
+<script src="../assets/admin.js"></script>
+<script>
+ADMIN.mount('media');
+const set=(id,s)=>{const e=document.getElementById(id);if(e)e.innerHTML=s;};
+set('i1',AI.filter);set('i2',AI.plus);set('up',AI.image);set('del',AI.trash);
+const imgs=[['u7','registan-sunset',284],['u9','tashkent-airport',312],['u8','registan-plane',298],['u5','khiva-aerial',266],['u6','tashkent-city',341],['u1','bukhara-court',271],['u4','shahizinda-guide',255],['u2','afrosiyob-train',288],['u3','charvak-lake',279],['u7','samarkand-dome',263],['u5','khiva-walls',244],['u6','tashkent-metro',301]];
+document.getElementById('mgrid').innerHTML=imgs.map((m,i)=>`
+  <div class="masset ${i===0?'sel':''}"><div class="mt"><img src="../assets/img/${m[0]}.jpg" alt=""/></div><div class="mb"><b>${m[1]}.jpg</b><small>1600×900 · ${m[2]}KB</small></div></div>`).join('');
+document.querySelectorAll('.masset').forEach(a=>a.onclick=()=>{document.querySelectorAll('.masset').forEach(x=>x.classList.remove('sel'));a.classList.add('sel');});
+</script>
+</body>
+</html>

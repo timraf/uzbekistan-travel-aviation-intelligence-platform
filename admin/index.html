@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dashboard — UZBEKISTAN Gateway Admin</title>
+<link rel="stylesheet" href="../assets/site.css"/>
+<link rel="stylesheet" href="../assets/admin.css"/>
+</head>
+<body class="admin-body">
+<div class="admin">
+  <div id="admin-side"></div>
+  <main class="amain">
+    <div id="admin-top" data-title="Dashboard"></div>
+    <div class="acontent" data-screen-label="Admin dashboard">
+
+      <div class="toolbar">
+        <div><h2 style="font-size:1.4rem">Good morning, Aziza 👋</h2><p class="muted" style="font-size:.9rem">Here's what's happening across the gateway today.</p></div>
+        <div class="grow"></div>
+        <a href="news.html" class="btn btn-ghost btn-sm"><span id="qa1"></span> New article</a>
+        <a href="cities.html" class="btn btn-primary btn-sm"><span id="qa2"></span> New content</a>
+      </div>
+
+      <div class="kpi-grid">
+        <div class="kpi"><div class="kt"><span class="ki" id="k1"></span> Monthly visitors</div><b>248,910</b><span class="trend up">▲ 12.4% vs last month</span></div>
+        <div class="kpi"><div class="kt"><span class="ki" id="k2"></span> Published content</div><b>1,284</b><span class="trend up">▲ 38 this week</span></div>
+        <div class="kpi"><div class="kt"><span class="ki" id="k3"></span> Affiliate revenue</div><b>$18.6k</b><span class="trend up">▲ 9.1% MoM</span></div>
+        <div class="kpi"><div class="kt"><span class="ki" id="k4"></span> Translation coverage</div><b>86%</b><span class="trend down">▼ 14% to complete</span></div>
+      </div>
+
+      <div class="grid" style="grid-template-columns:1.6fr 1fr;gap:18px;margin-top:18px">
+        <div class="acard">
+          <div class="acard-head"><h3>Traffic — last 14 days</h3><div class="row gap-s"><span class="badge badge-teal">Organic 64%</span><span class="badge badge-gold">AI search 11%</span></div></div>
+          <div class="acard-pad">
+            <div class="bars" id="bars"></div>
+            <div class="row between" style="margin-top:.8rem;font-size:.78rem;color:var(--text-faint)"><span>May 25</span><span>Jun 7</span></div>
+          </div>
+        </div>
+        <div class="acard">
+          <div class="acard-head"><h3>Traffic sources</h3></div>
+          <div class="acard-pad row gap-l" style="align-items:center">
+            <div class="donut"><div class="hole"><div><b class="serif" style="font-size:1.3rem;color:var(--primary)">64%</b><div style="font-size:.7rem;color:var(--text-faint)">organic</div></div></div></div>
+            <div class="stack gap-s" style="font-size:.86rem">
+              <div class="row gap-s"><span style="width:10px;height:10px;border-radius:3px;background:var(--primary)"></span> Organic search · 64%</div>
+              <div class="row gap-s"><span style="width:10px;height:10px;border-radius:3px;background:var(--gold)"></span> Direct &amp; referral · 22%</div>
+              <div class="row gap-s"><span style="width:10px;height:10px;border-radius:3px;background:var(--cobalt)"></span> AI assistants · 14%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid" style="grid-template-columns:1.6fr 1fr;gap:18px;margin-top:18px">
+        <div class="acard">
+          <div class="acard-head"><h3>Recent activity</h3><a href="audit.html" class="btn btn-quiet btn-sm">View audit log</a></div>
+          <div class="tbl-wrap" style="border:none;border-radius:0">
+            <table class="table">
+              <tbody>
+                <tr><td><div class="rowtitle"><div class="avatar" style="width:30px;height:30px;font-size:.7rem">DK</div><div><b>Dilnoza K.</b> published <a href="../news-article.html" class="txt-primary">"Tashkent unveils terminal"</a></div></div></td><td class="hide-sm"><span class="pill pub">Published</span></td><td class="muted" style="text-align:right">2m ago</td></tr>
+                <tr><td><div class="rowtitle"><div class="avatar" style="width:30px;height:30px;font-size:.7rem">RT</div><div><b>Rustam T.</b> updated <a href="../city-samarkand.html" class="txt-primary">Samarkand</a> · RU translation</div></div></td><td class="hide-sm"><span class="pill review">In review</span></td><td class="muted" style="text-align:right">18m ago</td></tr>
+                <tr><td><div class="rowtitle"><div class="avatar" style="width:30px;height:30px;font-size:.7rem">AK</div><div><b>Aziza K.</b> added affiliate offer · <b>flydubai</b></div></div></td><td class="hide-sm"><span class="pill pub">Live</span></td><td class="muted" style="text-align:right">1h ago</td></tr>
+                <tr><td><div class="rowtitle"><div class="avatar" style="width:30px;height:30px;font-size:.7rem">MS</div><div><b>Malika S.</b> uploaded 12 images to Media Library</div></div></td><td class="hide-sm"><span class="pill draft">Draft</span></td><td class="muted" style="text-align:right">3h ago</td></tr>
+                <tr><td><div class="rowtitle"><div class="avatar" style="width:30px;height:30px;font-size:.7rem">JB</div><div><b>Javlon B.</b> scheduled guide · <b>Silk Road in 10 days</b></div></div></td><td class="hide-sm"><span class="pill sched">Scheduled</span></td><td class="muted" style="text-align:right">5h ago</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="stack gap" style="gap:18px">
+          <div class="acard">
+            <div class="acard-head"><h3>Needs attention</h3></div>
+            <div class="acard-pad stack gap-s">
+              <a href="translations.html" class="row between" style="padding:.6rem .7rem;border-radius:8px;background:var(--surface-2)"><span class="row gap-s"><span class="pill review">14</span> Missing UZ translations</span><span id="n1"></span></a>
+              <a href="news.html" class="row between" style="padding:.6rem .7rem;border-radius:8px;background:var(--surface-2)"><span class="row gap-s"><span class="pill draft">6</span> Drafts awaiting review</span><span id="n2"></span></a>
+              <a href="seo.html" class="row between" style="padding:.6rem .7rem;border-radius:8px;background:var(--surface-2)"><span class="row gap-s"><span class="pill sched">3</span> Pages missing meta</span><span id="n3"></span></a>
+            </div>
+          </div>
+          <div class="acard">
+            <div class="acard-head"><h3>Top content</h3></div>
+            <div class="acard-pad stack gap-s" style="font-size:.88rem">
+              <div class="row between"><a href="../city-samarkand.html" class="txt-primary" style="font-weight:600">Samarkand guide</a><span class="muted mono">41.2k</span></div>
+              <div class="row between"><a href="../airport-tashkent.html" class="txt-primary" style="font-weight:600">Tashkent airport</a><span class="muted mono">28.7k</span></div>
+              <div class="row between"><a href="../attraction-registan.html" class="txt-primary" style="font-weight:600">Registan</a><span class="muted mono">22.1k</span></div>
+              <div class="row between"><a href="../transportation.html" class="txt-primary" style="font-weight:600">Afrosiyob rail</a><span class="muted mono">15.9k</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+<script src="../assets/admin.js"></script>
+<script>
+ADMIN.mount('dashboard');
+const set=(id,s)=>{const e=document.getElementById(id);if(e)e.innerHTML=s;};
+set('k1',AI.chart);set('k2',AI.news);set('k3',AI.cash);set('k4',AI.globe);
+set('qa1',AI.plus);set('qa2',AI.plus);set('n1',AI.ext);set('n2',AI.ext);set('n3',AI.ext);
+const h=[42,55,48,63,58,70,66,78,72,85,80,92,88,96];
+document.getElementById('bars').innerHTML=h.map(v=>`<div class="bar" title="${v}k"><i style="height:${v}%"></i></div>`).join('');
+</script>
+</body>
+</html>

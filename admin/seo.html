@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SEO & Discoverability — UZBEKISTAN Gateway Admin</title>
+<link rel="stylesheet" href="../assets/site.css"/>
+<link rel="stylesheet" href="../assets/admin.css"/>
+<style>
+.serp{border:1px solid var(--border);border-radius:var(--r);padding:1rem 1.2rem;background:var(--surface)}
+.serp .u{font-size:.78rem;color:var(--positive)}
+.serp .t{color:var(--cobalt);font-size:1.15rem;margin:.2rem 0}
+.serp .d{font-size:.86rem;color:var(--text-muted)}
+.score{width:84px;height:84px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--positive) 0 92%,var(--surface-3) 92% 100%)}
+.score .h{width:62px;height:62px;border-radius:50%;background:var(--surface);display:grid;place-items:center;font-weight:700;font-size:1.3rem;color:var(--positive)}
+</style>
+</head>
+<body class="admin-body">
+<div class="admin">
+  <div id="admin-side"></div>
+  <main class="amain">
+    <div id="admin-top" data-title="SEO & Discoverability"></div>
+    <div class="acontent" data-screen-label="Admin SEO">
+
+      <div class="toolbar">
+        <div><h2 style="font-size:1.4rem">SEO &amp; discoverability</h2><p class="muted" style="font-size:.9rem">SEO · programmatic SEO · GEO &amp; AI-search readiness</p></div>
+        <div class="grow"></div>
+        <button class="btn btn-ghost btn-sm"><span id="i1"></span> Sitemap</button>
+        <button class="btn btn-primary btn-sm"><span id="i2"></span> Run audit</button>
+      </div>
+
+      <div class="grid" style="grid-template-columns:repeat(4,1fr);gap:16px">
+        <div class="acard acard-pad row gap"><div class="score"><div class="h">92</div></div><div><b style="font-size:.9rem">SEO health</b><div class="muted" style="font-size:.82rem">Good</div></div></div>
+        <div class="kpi"><div class="kt">Indexed pages</div><b>1,284</b><span class="trend up">▲ 38 new</span></div>
+        <div class="kpi"><div class="kt">Schema coverage</div><b>96%</b><span class="trend up">structured data</span></div>
+        <div class="kpi"><div class="kt">AI-search citations</div><b>312</b><span class="trend up">▲ GEO traffic</span></div>
+      </div>
+
+      <div class="grid" style="grid-template-columns:1.2fr 1fr;gap:18px;margin-top:18px;align-items:start">
+        <div class="acard">
+          <div class="acard-head"><h3>Page meta · Samarkand</h3><span class="badge badge-teal">Editing</span></div>
+          <div class="acard-pad">
+            <div class="serp" style="margin-bottom:1.2rem"><div class="u">uzbekistan.gateway › cities › samarkand</div><div class="t">Samarkand Travel Guide — Registan, Heritage &amp; Hotels</div><div class="d">Plan a trip to Samarkand: Registan Square, Shah-i-Zinda, the SKD airport, Afrosiyob rail, where to stay and the best time to visit.</div></div>
+            <div class="field"><label class="label">Title tag <span class="muted">· 54/60</span></label><input class="input" value="Samarkand Travel Guide — Registan, Heritage & Hotels"/></div>
+            <div class="field" style="margin-top:.7rem"><label class="label">Meta description <span class="muted">· 142/160</span></label><textarea class="textarea" rows="2">Plan a trip to Samarkand: Registan Square, Shah-i-Zinda, the SKD airport, Afrosiyob rail, where to stay and the best time to visit.</textarea></div>
+            <div class="form-grid" style="margin-top:.7rem">
+              <div class="field"><label class="label">Canonical</label><input class="input" value="/cities/samarkand"/></div>
+              <div class="field"><label class="label">hreflang</label><input class="input" value="en · uz · ru"/></div>
+            </div>
+            <div class="row between" style="margin-top:1rem"><span class="row gap-s"><span class="pill pub">Indexable</span><span class="pill pub">In sitemap</span></span><button class="btn btn-primary btn-sm">Save meta</button></div>
+          </div>
+        </div>
+
+        <div class="stack gap" style="gap:18px">
+          <div class="acard">
+            <div class="acard-head"><h3>Structured data</h3><span class="badge badge-cobalt">JSON-LD</span></div>
+            <div class="acard-pad">
+              <div class="seo-panel" style="font-size:.74rem">{ <span class="k">"@type"</span>:<span class="v">"TouristDestination"</span>,<br/>&nbsp;<span class="k">"name"</span>:<span class="v">"Samarkand"</span>, <span class="k">"nearbyAirport"</span>:<span class="v">"SKD"</span> }</div>
+              <div class="stack gap-s" style="margin-top:1rem;font-size:.86rem">
+                <div class="row between"><span>TouristDestination</span><span class="pill pub">Valid</span></div>
+                <div class="row between"><span>BreadcrumbList</span><span class="pill pub">Valid</span></div>
+                <div class="row between"><span>FAQPage</span><span class="pill pub">Valid</span></div>
+                <div class="row between"><span>ImageObject</span><span class="pill review">2 missing alt</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="acard">
+            <div class="acard-head"><h3>GEO · AI-search readiness</h3></div>
+            <div class="acard-pad stack gap-s" style="font-size:.88rem">
+              <div class="row gap-s"><span class="pill pub"></span> Answer-ready content blocks</div>
+              <div class="row gap-s"><span class="pill pub"></span> Entity &amp; knowledge-panel markup</div>
+              <div class="row gap-s"><span class="pill pub"></span> llms.txt &amp; AI crawler access</div>
+              <div class="row gap-s"><span class="pill review"></span> 3 pages need concise summaries</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acard" style="margin-top:18px">
+        <div class="acard-head"><h3>Programmatic SEO templates</h3><button class="btn btn-quiet btn-sm">Manage templates</button></div>
+        <table class="table">
+          <thead><tr><th>Template</th><th class="hide-sm">Pattern</th><th class="hide-sm">Pages</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td><b>City pages</b></td><td class="hide-sm mono muted">/cities/{slug}</td><td class="hide-sm">60</td><td><span class="pill pub">Live</span></td></tr>
+            <tr><td><b>Airport pages</b></td><td class="hide-sm mono muted">/airports/{iata}</td><td class="hide-sm">11</td><td><span class="pill pub">Live</span></td></tr>
+            <tr><td><b>Attraction pages</b></td><td class="hide-sm mono muted">/attractions/{slug}</td><td class="hide-sm">214</td><td><span class="pill pub">Live</span></td></tr>
+            <tr><td><b>Route pages</b></td><td class="hide-sm mono muted">/transport/{from}-{to}</td><td class="hide-sm">340</td><td><span class="pill review">Generating</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+</div>
+<script src="../assets/admin.js"></script>
+<script>
+ADMIN.mount('seo');
+const set=(id,s)=>{const e=document.getElementById(id);if(e)e.innerHTML=s;};
+set('i1',AI.ext);set('i2',AI.seo);
+</script>
+</body>
+</html>

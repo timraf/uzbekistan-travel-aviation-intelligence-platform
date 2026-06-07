@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Users — UZBEKISTAN Gateway Admin</title>
+<link rel="stylesheet" href="../assets/site.css"/>
+<link rel="stylesheet" href="../assets/admin.css"/>
+</head>
+<body class="admin-body">
+<div class="admin">
+  <div id="admin-side"></div>
+  <main class="amain">
+    <div id="admin-top" data-title="Users"></div>
+    <div class="acontent" data-screen-label="Admin users">
+
+      <div class="toolbar">
+        <div><h2 style="font-size:1.4rem">Users</h2><p class="muted" style="font-size:.9rem">18 team members · roles &amp; access</p></div>
+        <div class="grow"></div>
+        <button class="btn btn-ghost btn-sm"><span id="i1"></span> Filter</button>
+        <a href="roles.html" class="btn btn-ghost btn-sm"><span id="i2"></span> Manage roles</a>
+        <button class="btn btn-primary btn-sm"><span id="i3"></span> Invite user</button>
+      </div>
+
+      <div class="atabs" data-group="a">
+        <button class="on" data-tab="all">All <span class="count" style="margin:0">18</span></button>
+        <button data-tab="intl">Active</button>
+        <button data-tab="domestic">Invited</button>
+        <button data-tab="draft">Suspended</button>
+      </div>
+
+      <div class="toolbar">
+        <div class="atop-search" style="display:flex;flex:1;max-width:340px"><span id="i4"></span><input placeholder="Search airports…"/></div>
+        <span class="muted" style="font-size:.84rem">Bulk:</span>
+        <button class="btn btn-ghost btn-sm">Publish</button>
+        <button class="btn btn-ghost btn-sm">Export</button>
+      </div>
+
+      <div class="tbl-wrap">
+        <table class="table">
+          <thead><tr><th style="width:32px"><input type="checkbox"/></th><th>User</th><th class="hide-sm">Role</th><th>Status</th><th class="hide-sm">Languages</th><th class="hide-sm">Last active</th><th style="width:80px"></th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+        <div class="tbl-foot"><span>Showing 1–8 of 18</span><div class="pager"><button>‹</button><button class="on">1</button><button>2</button><button>›</button></div></div>
+      </div>
+
+    </div>
+  </main>
+</div>
+<script src="../assets/admin.js"></script>
+<script>
+ADMIN.mount('users');
+const set=(id,s)=>{const e=document.getElementById(id);if(e)e.innerHTML=s;};
+set('i1',AI.filter);set('i2',AI.shield);set('i3',AI.plus);set('i4',AI.search);
+const data=[
+  ['AK','Aziza Karimova','Administrator','pub','Active','EN UZ RU','Online'],
+  ['DK','Dilnoza Kamilova','Editor','pub','Active','EN UZ RU','2m ago'],
+  ['RT','Rustam Tashmatov','Editor','pub','Active','EN UZ','18m ago'],
+  ['MS','Malika Saidova','Translator','pub','Active','EN UZ RU','1h ago'],
+  ['JB','Javlon Bekov','Author','pub','Active','EN UZ','3h ago'],
+  ['SN','Sevara Nazarova','Translator','review','Invited','EN RU','—'],
+  ['OF','Otabek Fayzullaev','Partner manager','pub','Active','EN','1d ago'],
+  ['NU','Nigora Usmonova','Viewer','draft','Suspended','EN','2w ago']
+];
+function langdots(s){const all=['EN','UZ','RU'];return '<span class="langdots">'+all.map(l=>`<span class="${s.includes(l)?'done':'miss'}">${l}</span>`).join('')+'</span>';}
+const roleColor={'Administrator':'badge-gold','Editor':'badge-teal','Translator':'badge-cobalt','Author':'badge-teal','Partner manager':'badge-gold','Viewer':'badge-spon'};
+document.getElementById('rows').innerHTML=data.map(d=>`
+  <tr>
+    <td><input type="checkbox"/></td>
+    <td><div class="rowtitle"><div class="avatar" style="width:36px;height:36px">${d[0]}</div><div><b>${d[1]}</b><small>${d[1].toLowerCase().replace(' ','.')}@uzbekistan.gateway</small></div></div></td>
+    <td class="hide-sm"><span class="badge ${roleColor[d[2]]||'badge-teal'}">${d[2]}</span></td>
+    <td><span class="pill ${d[3]}">${d[4]}</span></td>
+    <td class="hide-sm">${langdots(d[5])}</td>
+    <td class="hide-sm muted">${d[6]}</td>
+    <td><div class="row gap-s"><button class="iconbtn" title="Edit">${AI.edit}</button><button class="iconbtn" title="More">${AI.dots}</button></div></td>
+  </tr>`).join('');
+</script>
+</body>
+</html>

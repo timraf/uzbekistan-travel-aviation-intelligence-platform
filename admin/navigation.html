@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Navigation — UZBEKISTAN Gateway Admin</title>
+<link rel="stylesheet" href="../assets/site.css"/>
+<link rel="stylesheet" href="../assets/admin.css"/>
+<style>
+.navitem{display:flex;align-items:center;gap:.8rem;padding:.8rem 1rem;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);margin-bottom:8px}
+.navitem.child{margin-left:2rem}
+.navitem .drag{color:var(--text-faint);cursor:grab}
+.navitem .drag svg{width:16px;height:16px}
+</style>
+</head>
+<body class="admin-body">
+<div class="admin">
+  <div id="admin-side"></div>
+  <main class="amain">
+    <div id="admin-top" data-title="Navigation"></div>
+    <div class="acontent" data-screen-label="Admin navigation">
+
+      <div class="toolbar">
+        <div><h2 style="font-size:1.4rem">Navigation menus</h2><p class="muted" style="font-size:.9rem">Header, dropdowns &amp; footer · drag to reorder</p></div>
+        <div class="grow"></div>
+        <button class="btn btn-primary btn-sm">Save menus</button>
+      </div>
+
+      <div class="atabs" data-group="a">
+        <button class="on">Header</button><button>Footer</button><button>Mobile</button>
+      </div>
+
+      <div class="grid" style="grid-template-columns:1.4fr 1fr;gap:18px;align-items:start">
+        <div class="acard">
+          <div class="acard-head"><h3>Primary navigation</h3><button class="btn btn-ghost btn-sm"><span id="i1"></span> Add item</button></div>
+          <div class="acard-pad" id="navlist"></div>
+        </div>
+        <div class="acard">
+          <div class="acard-head"><h3>Add / edit link</h3></div>
+          <div class="acard-pad">
+            <div class="field"><label class="label">Label (EN)</label><input class="input" value="Destinations"/></div>
+            <div class="field" style="margin-top:.6rem"><label class="label">Label (UZ)</label><input class="input" value="Yo‘nalishlar"/></div>
+            <div class="field" style="margin-top:.6rem"><label class="label">Label (RU)</label><input class="input" value="Направления"/></div>
+            <div class="field" style="margin-top:.6rem"><label class="label">Type</label><select class="select"><option>Dropdown menu</option><option>Internal link</option><option>External link</option></select></div>
+            <div class="field" style="margin-top:.6rem"><label class="label">Visible</label><div class="row gap-s"><div class="switch on"></div><span class="muted" style="font-size:.84rem">Shown in header</span></div></div>
+            <button class="btn btn-primary btn-sm btn-block" style="margin-top:1rem">Update item</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+<script src="../assets/admin.js"></script>
+<script>
+ADMIN.mount('navigation');
+const set=(id,s)=>{const e=document.getElementById(id);if(e)e.innerHTML=s;};
+set('i1',AI.plus);
+const drag='<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="6" r="1.4"/><circle cx="15" cy="6" r="1.4"/><circle cx="9" cy="12" r="1.4"/><circle cx="15" cy="12" r="1.4"/><circle cx="9" cy="18" r="1.4"/><circle cx="15" cy="18" r="1.4"/></svg>';
+const items=[
+  ['Discover','/discover',0],['Airports','/airports',0],
+  ['Destinations','dropdown',0],['— Cities','/cities',1],['— Attractions','/attractions',1],['— UNESCO Heritage','/unesco',1],
+  ['Plan & Travel','dropdown',0],['— Transportation','/transportation',1],['— Travel Guides','/guides',1],
+  ['News','/news',0]
+];
+document.getElementById('navlist').innerHTML=items.map(it=>`
+  <div class="navitem ${it[2]?'child':''}">
+    <span class="drag">${drag}</span>
+    <div style="flex:1"><b style="font-size:.9rem">${it[0]}</b> <span class="muted mono" style="font-size:.74rem">${it[1]}</span></div>
+    ${it[1]==='dropdown'?'<span class="badge badge-cobalt">Menu</span>':'<span class="badge badge-teal">Link</span>'}
+    <button class="iconbtn">${AI.edit}</button>
+  </div>`).join('');
+document.querySelectorAll('.switch').forEach(sw=>sw.onclick=()=>sw.classList.toggle('on'));
+</script>
+</body>
+</html>

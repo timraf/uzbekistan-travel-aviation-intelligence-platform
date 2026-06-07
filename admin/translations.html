@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Translations — UZBEKISTAN Gateway Admin</title>
+<link rel="stylesheet" href="../assets/site.css"/>
+<link rel="stylesheet" href="../assets/admin.css"/>
+<style>
+.prog{height:8px;border-radius:999px;background:var(--surface-3);overflow:hidden;min-width:90px}
+.prog i{display:block;height:100%;background:var(--primary);border-radius:999px}
+.tr-editor{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden}
+.tr-col{padding:1.1rem 1.2rem}
+.tr-col+.tr-col{border-left:1px solid var(--border)}
+.tr-col h4{font-size:.82rem;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.1em;color:var(--text-faint);margin-bottom:1rem;display:flex;justify-content:space-between}
+.tr-field{margin-bottom:1rem}
+.tr-field label{font-size:.72rem;color:var(--text-faint);display:block;margin-bottom:.3rem}
+.tr-field .src{font-size:.92rem;padding:.6rem .7rem;background:var(--surface-2);border-radius:8px;border:1px solid var(--border)}
+@media (max-width:720px){.tr-editor{grid-template-columns:1fr}.tr-col+.tr-col{border-left:none;border-top:1px solid var(--border)}}
+</style>
+</head>
+<body class="admin-body">
+<div class="admin">
+  <div id="admin-side"></div>
+  <main class="amain">
+    <div id="admin-top" data-title="Translations"></div>
+    <div class="acontent" data-screen-label="Admin translations">
+
+      <div class="toolbar">
+        <div><h2 style="font-size:1.4rem">Translation management</h2><p class="muted" style="font-size:.9rem">Manage EN · UZ · RU across every content entity</p></div>
+        <div class="grow"></div>
+        <button class="btn btn-ghost btn-sm"><span id="i1"></span> Auto-translate</button>
+        <button class="btn btn-primary btn-sm"><span id="i2"></span> Export strings</button>
+      </div>
+
+      <div class="kpi-grid" style="margin-bottom:18px">
+        <div class="kpi"><div class="kt">English (source)</div><b>100%</b><div class="prog" style="margin-top:.4rem"><i style="width:100%"></i></div></div>
+        <div class="kpi"><div class="kt">O‘zbekcha (UZ)</div><b>92%</b><div class="prog" style="margin-top:.4rem"><i style="width:92%"></i></div></div>
+        <div class="kpi"><div class="kt">Русский (RU)</div><b>74%</b><div class="prog" style="margin-top:.4rem"><i style="width:74%"></i></div></div>
+        <div class="kpi"><div class="kt">Strings to review</div><b>148</b><span class="trend down">across 22 entities</span></div>
+      </div>
+
+      <div class="grid" style="grid-template-columns:1fr 1.3fr;gap:18px;align-items:start">
+        <div class="tbl-wrap">
+          <div class="acard-head"><h3>Content entities</h3><span class="badge badge-teal">By coverage</span></div>
+          <table class="table">
+            <thead><tr><th>Entity</th><th>UZ</th><th>RU</th></tr></thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+
+        <div class="acard">
+          <div class="acard-head"><h3>Editing · Samarkand · overview</h3><span class="badge badge-gold">Machine + human</span></div>
+          <div class="acard-pad">
+            <div class="tr-editor">
+              <div class="tr-col">
+                <h4>English <span class="badge badge-teal" style="font-size:.6rem">Source</span></h4>
+                <div class="tr-field"><label>Title</label><div class="src">Samarkand</div></div>
+                <div class="tr-field"><label>Summary</label><div class="src">The crossroads of cultures — Registan, Shah-i-Zinda and Gur-e-Amir.</div></div>
+                <div class="tr-field"><label>Meta description</label><div class="src">Plan a trip to Samarkand: Registan, heritage, airport and hotels.</div></div>
+              </div>
+              <div class="tr-col">
+                <h4>Русский <span class="row gap-s"><span class="badge badge-gold" style="font-size:.6rem">74%</span></span></h4>
+                <div class="tr-field"><label>Title</label><input class="input" value="Самарканд"/></div>
+                <div class="tr-field"><label>Summary <span class="txt-cobalt" style="font-size:.66rem">· AI suggested</span></label><textarea class="textarea" rows="3">Перекрёсток культур — Регистан, Шахи-Зинда и Гур-Эмир.</textarea></div>
+                <div class="tr-field"><label>Meta description</label><textarea class="textarea" rows="2" placeholder="Требуется перевод…"></textarea></div>
+              </div>
+            </div>
+            <div class="row between" style="margin-top:1rem"><div class="row gap-s"><button class="btn btn-ghost btn-sm"><span id="i3"></span> Suggest all</button><span class="muted" style="font-size:.82rem">Auto-saved 1m ago</span></div><button class="btn btn-primary btn-sm">Approve &amp; publish</button></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+<script src="../assets/admin.js"></script>
+<script>
+ADMIN.mount('translations');
+const set=(id,s)=>{const e=document.getElementById(id);if(e)e.innerHTML=s;};
+set('i1',AI.globe);set('i2',AI.ext);set('i3',AI.star);
+const rows=[['Samarkand',100,74],['Tashkent',100,88],['Registan',100,60],['Itchan Kala',96,52],['Airports · TAS',100,90],['Afrosiyob rail',88,70],['Classic Silk Road',92,40],['UNESCO heritage',84,46]];
+function bar(v){return `<div class="prog"><i style="width:${v}%"></i></div>`;}
+document.getElementById('rows').innerHTML=rows.map((r,i)=>`<tr style="${i===0?'background:var(--primary-soft)':''}"><td><b style="font-size:.88rem">${r[0]}</b></td><td><div class="row gap-s">${bar(r[1])}<small class="muted mono">${r[1]}</small></div></td><td><div class="row gap-s">${bar(r[2])}<small class="muted mono">${r[2]}</small></div></td></tr>`).join('');
+</script>
+</body>
+</html>

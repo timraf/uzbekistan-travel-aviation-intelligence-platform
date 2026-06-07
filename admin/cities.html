@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cities — UZBEKISTAN Gateway Admin</title>
+<link rel="stylesheet" href="../assets/site.css"/>
+<link rel="stylesheet" href="../assets/admin.css"/>
+</head>
+<body class="admin-body">
+<div class="admin">
+  <div id="admin-side"></div>
+  <main class="amain">
+    <div id="admin-top" data-title="Cities"></div>
+    <div class="acontent" data-screen-label="Admin cities">
+
+      <div class="toolbar">
+        <div><h2 style="font-size:1.4rem">Cities &amp; regions</h2><p class="muted" style="font-size:.9rem">60 city entities across 14 regions</p></div>
+        <div class="grow"></div>
+        <button class="btn btn-ghost btn-sm"><span id="i1"></span> Filter</button>
+        <button class="btn btn-ghost btn-sm"><span id="i2"></span> Import</button>
+        <button class="btn btn-primary btn-sm"><span id="i3"></span> Add city</button>
+      </div>
+
+      <div class="atabs" data-group="a">
+        <button class="on" data-tab="all">All <span class="count" style="margin:0">60</span></button>
+        <button data-tab="intl">Featured</button>
+        <button data-tab="domestic">UNESCO</button>
+        <button data-tab="draft">Drafts</button>
+      </div>
+
+      <div class="toolbar">
+        <div class="atop-search" style="display:flex;flex:1;max-width:340px"><span id="i4"></span><input placeholder="Search airports…"/></div>
+        <span class="muted" style="font-size:.84rem">Bulk:</span>
+        <button class="btn btn-ghost btn-sm">Publish</button>
+        <button class="btn btn-ghost btn-sm">Export</button>
+      </div>
+
+      <div class="tbl-wrap">
+        <table class="table">
+          <thead><tr><th style="width:32px"><input type="checkbox"/></th><th>City</th><th class="hide-sm">Region</th><th class="hide-sm">Airport</th><th>Status</th><th class="hide-sm">Translations</th><th class="hide-sm">Updated</th><th style="width:80px"></th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+        <div class="tbl-foot"><span>Showing 1–8 of 60</span><div class="pager"><button>‹</button><button class="on">1</button><button>2</button><button>3</button><button>›</button></div></div>
+      </div>
+
+    </div>
+  </main>
+</div>
+<script src="../assets/admin.js"></script>
+<script>
+ADMIN.mount('cities');
+const set=(id,s)=>{const e=document.getElementById(id);if(e)e.innerHTML=s;};
+set('i1',AI.filter);set('i2',AI.ext);set('i3',AI.plus);set('i4',AI.search);
+const data=[
+  ['u7','Samarkand','Samarkand','SKD','pub','Published','EN UZ RU','2h ago','samarkand'],
+  ['u6','Tashkent','Tashkent','TAS','pub','Published','EN UZ RU','5h ago','tashkent'],
+  ['u5','Khiva','Khorezm','UGC','pub','Published','EN UZ RU','1d ago','samarkand'],
+  ['u1','Bukhara','Bukhara','BHK','pub','Published','EN UZ','2d ago','samarkand'],
+  ['u8','Shakhrisabz','Kashkadarya','SKD','review','In review','EN UZ','4d ago','samarkand'],
+  ['u3','Nukus','Karakalpakstan','NCU','pub','Published','EN UZ','6d ago','tashkent'],
+  ['u6','Fergana','Fergana','FEG','draft','Draft','EN','1w ago','tashkent'],
+  ['u3','Termez','Surkhandarya','TMJ','draft','Draft','EN','2w ago','tashkent']
+];
+function langdots(s){const all=['EN','UZ','RU'];return '<span class="langdots">'+all.map(l=>`<span class="${s.includes(l)?'done':'miss'}">${l}</span>`).join('')+'</span>';}
+document.getElementById('rows').innerHTML=data.map(d=>`
+  <tr>
+    <td><input type="checkbox"/></td>
+    <td><div class="rowtitle"><img class="thumb" src="../assets/img/${d[0]}.jpg" alt=""/><div><b>${d[1]}</b><small>/cities/${d[1].toLowerCase()}</small></div></div></td>
+    <td class="hide-sm">${d[2]}</td>
+    <td class="hide-sm mono">${d[3]}</td>
+    <td><span class="pill ${d[4]}">${d[5]}</span></td>
+    <td class="hide-sm">${langdots(d[6])}</td>
+    <td class="hide-sm muted">${d[7]}</td>
+    <td><div class="row gap-s"><a href="../city-${d[8]}.html" class="iconbtn" title="View">${AI.ext}</a><button class="iconbtn" title="Edit">${AI.edit}</button><button class="iconbtn" title="More">${AI.dots}</button></div></td>
+  </tr>`).join('');
+</script>
+</body>
+</html>

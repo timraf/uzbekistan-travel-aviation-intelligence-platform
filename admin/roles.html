@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Roles & Permissions — UZBEKISTAN Gateway Admin</title>
+<link rel="stylesheet" href="../assets/site.css"/>
+<link rel="stylesheet" href="../assets/admin.css"/>
+<style>
+.matrix th.role{text-align:center}
+.matrix td.cell{text-align:center}
+.dot-y{width:20px;height:20px;border-radius:6px;background:var(--primary-soft);color:var(--primary-strong);display:inline-grid;place-items:center}
+.dot-n{width:20px;height:20px;border-radius:6px;background:var(--surface-3);color:var(--text-faint);display:inline-grid;place-items:center}
+.dot-y svg,.dot-n svg{width:13px;height:13px}
+</style>
+</head>
+<body class="admin-body">
+<div class="admin">
+  <div id="admin-side"></div>
+  <main class="amain">
+    <div id="admin-top" data-title="Roles & Permissions"></div>
+    <div class="acontent" data-screen-label="Admin roles">
+
+      <div class="toolbar">
+        <div><h2 style="font-size:1.4rem">Roles &amp; permissions</h2><p class="muted" style="font-size:.9rem">Role-based access control across the CMS</p></div>
+        <div class="grow"></div>
+        <button class="btn btn-primary btn-sm"><span id="i1"></span> New role</button>
+      </div>
+
+      <div class="grid g4" style="margin-bottom:18px">
+        <div class="acard acard-pad"><div class="row between"><b>Administrator</b><span class="badge badge-gold">2</span></div><p class="muted" style="font-size:.82rem;margin-top:.3rem">Full access</p></div>
+        <div class="acard acard-pad"><div class="row between"><b>Editor</b><span class="badge badge-teal">5</span></div><p class="muted" style="font-size:.82rem;margin-top:.3rem">Create &amp; publish content</p></div>
+        <div class="acard acard-pad"><div class="row between"><b>Translator</b><span class="badge badge-cobalt">4</span></div><p class="muted" style="font-size:.82rem;margin-top:.3rem">Manage translations</p></div>
+        <div class="acard acard-pad"><div class="row between"><b>Viewer</b><span class="badge badge-spon">7</span></div><p class="muted" style="font-size:.82rem;margin-top:.3rem">Read-only</p></div>
+      </div>
+
+      <div class="tbl-wrap">
+        <div class="acard-head"><h3>Permission matrix</h3><button class="btn btn-quiet btn-sm">Edit permissions</button></div>
+        <table class="table matrix">
+          <thead><tr><th>Permission</th><th class="role">Admin</th><th class="role">Editor</th><th class="role">Translator</th><th class="role">Author</th><th class="role">Viewer</th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+</div>
+<script src="../assets/admin.js"></script>
+<script>
+ADMIN.mount('roles');
+const set=(id,s)=>{const e=document.getElementById(id);if(e)e.innerHTML=s;};
+set('i1',AI.plus);
+const y=`<span class="dot-y">${AI.plus.replace('M12 5v14M5 12h14','M20 6 9 17l-5-5').replace('stroke-width="2.2"','stroke-width="2.4"')}</span>`;
+const yes=`<span class="dot-y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>`;
+const no=`<span class="dot-n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></span>`;
+const perms=[
+  ['View content',[1,1,1,1,1]],
+  ['Create content',[1,1,0,1,0]],
+  ['Edit any content',[1,1,0,0,0]],
+  ['Publish content',[1,1,0,0,0]],
+  ['Manage translations',[1,1,1,0,0]],
+  ['Manage media',[1,1,0,1,0]],
+  ['Manage affiliates & partners',[1,0,0,0,0]],
+  ['Manage SEO',[1,1,0,0,0]],
+  ['Manage users & roles',[1,0,0,0,0]],
+  ['System settings',[1,0,0,0,0]],
+  ['View audit logs',[1,1,0,0,0]]
+];
+document.getElementById('rows').innerHTML=perms.map(p=>`<tr><td><b style="font-size:.88rem">${p[0]}</b></td>${p[1].map(v=>`<td class="cell">${v?yes:no}</td>`).join('')}</tr>`).join('');
+</script>
+</body>
+</html>
